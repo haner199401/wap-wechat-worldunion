@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 深圳
+        link(rel="stylesheet" ,href="/assets/styles/my/location.min.css")
+    body
+        #loaction_page.page.app.out(data-onpagefirstinto="getCityList")
+            header
+                a.icon.icon_back(href="#add_house",data-rel="back")
+                h1.title.current_city 深圳市
+            .mr
+                p 当前定位城市&nbsp;-&nbsp;
+                    span.current_city --
+                    a#loacation_btn &nbsp;GPS定位
+
+            section.container
+                ul.city_list.clearfix#city-list

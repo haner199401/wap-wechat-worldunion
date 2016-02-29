@@ -1,0 +1,58 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 个人中心
+        link(rel="stylesheet" ,href="/assets/styles/personal/personalCenter.min.css")
+    body
+        #personal_page.app.auth_page.refresh_page.go_index_layer
+            header
+                a.icon.icon_back(href="../index.html")
+                h1.title
+
+            section.container
+                form#personalCenter(method="post")
+                    input#uid(type="hidden",name="uId")
+                    .my_asset
+                        .info
+                            a(href="personalInfo.html")
+                                img#imgPhoto(src="/assets/image/pic__zichan@2x.png")
+                            br
+                            span.username -
+
+                        .my_assets
+                            span 资产总值
+                            p
+                                span.assets -
+                                span.assetswan 万
+
+                        .my_assetssplit
+
+                        .my_netassets
+                            span 净资产总值
+                            p
+                                span.netassets -
+                                span.assetswan 万
+
+                    a.input_group(name="wdjedai")
+                        img(src="/assets/image/icon__wdjiedai@2x.png")
+                        label 我的贷款
+                        input#dk(type="text",name="dk",readonly="true" )
+                        i.icon.icon_next
+
+                    a.input_group(name="wdWeituo")
+                        img(src="/assets/image/icon__wdweituo@2x.png")
+                        label 我的委托
+                        input#wt(type="text",name="wt",readonly="true")
+                        i.icon.icon_next
+
+                    a.input_group(name="suggestion")
+                        img(src="/assets/image/icon__yijian@2x.png")
+                        label 意见反馈
+                        input#yj(type="text",name="yj",readonly="true")
+                        i.icon.icon_next
+                    .sub_btn.padding_left
+                        input#submit_btn.btn.red_btn(type="button",value="退出")
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/personal/personalCenter.js")

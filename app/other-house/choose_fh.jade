@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+    head
+        title 房号
+    body
+        #choose_fh.app.page.out(data-callback="initPageData")
+            header
+                a.icon.icon_back(href="#choose_ld",data-rel="back" data-reload)
+                h1.title 房号
+
+            section.container
+                .mr
+                    #search.clearfix.search_form
+                        input.fl(type="text",name="key",placeholder="搜索房号")
+                        input.fr(type="button",value="")
+
+                ul.data_list#room_list
+
+                button.not_found(data-type="?type=fh") 找不到想要的

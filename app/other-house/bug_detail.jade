@@ -1,0 +1,39 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 我要买
+        link(rel="stylesheet" ,href="/assets/styles/other-house/buged.min.css")
+    body
+        .app
+            header
+                a.icon.icon_back(href="javascript:history.go(-1);")
+                h1.title
+
+                form#wu-detail
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/other-house/buged.js")
+        script(type="text/html",id="wu-detail-tmpl").
+            <div class="input_group">
+            <label>业主姓名：</label>
+            <label><!--[=fullName]--></label>
+            </div>
+            <div class="input_group">
+            <label>业主电话：</label>
+            <label><!--[=mobiletel]--></label>
+            </div>
+            <div class="input_group">
+            <label>交易金额：</label>
+            <label><!--[=$formatMoney(entrustPrice) || 0]-->万</label>
+            </div>
+            <div class="input_group">
+            <label>审核状态：</label>
+            <label class="f_color_ce3128"><!--[=statusMeaning]--></label>
+            </div>
+            <div class="input_group textarea">
+                <label>备注：</label>
+                <div class="remark">
+                    <!--[=remark || '暂无备注']-->
+                </div>
+            </div>

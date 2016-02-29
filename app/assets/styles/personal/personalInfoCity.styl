@@ -1,0 +1,91 @@
+@import '../common/common'
+
+header .title
+  display block
+
+.mr
+  padding 0.75rem
+  #loacation_btn
+    color #818392
+
+.city_list
+  width: 14.4rem;
+  margin: auto
+  li
+    width 4.3rem
+    height 2.25rem
+    float left
+    border 1px solid $Input_bottom_line_cl
+    F_borderRadius(5px)
+    line-height @height
+    text-align center
+    margin 0.7rem 0
+    a
+      display block
+    &:nth-child(3n-1)
+      margin 0.7rem
+    &.active
+      background #D5D8DF
+      color #fff
+
+
+header
+  a
+    font-size 12px
+    color $Dialog_btn_cl
+  a.icon_address
+    padding-left: 23px
+    padding-right: 5px
+    background-size 20px auto
+    F_ellipsis(3.7rem)
+    font-size 15px
+  .title
+    display block
+
+#type
+  display none
+
+form
+  font-size 15px
+  .input_group
+    padding 0 0.75rem
+  input[type="button"]
+    width 95%
+    margin auto
+    margin-top 20px
+    padding 10px
+    font-size 0.85rem
+  .red_line
+    background url("/assets/image/icon__yuandian@2x.png") repeat-y
+    width 1rem
+    height 100%
+  input[type="text"]
+    text-align right
+
+ul.data_list
+  padding-left 0.75rem
+  font-size 14px
+  li
+    border-bottom 1px solid #C8C8C8
+    height 2.5rem
+    line-height @height
+    position relative
+    & a
+      display block
+    &.active
+      background url("/assets/image/icon__gouxuan@2x.png") no-repeat
+      background-position: 93% center;
+      background-size: 1.2rem auto;
+
+.not_found
+  width: 4.875rem;
+  height: 1.375rem;
+  border: 1px solid;
+  border-radius: 5px;
+  background: #F2F2F2
+  font-size 14px
+  position: fixed
+  bottom 1.75rem
+  right 0.75rem
+
+

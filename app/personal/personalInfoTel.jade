@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+    head
+        title 修改手机号
+        include ../com/meta
+        link(rel="stylesheet" ,href="/assets/styles/personal/personalInfoTel.min.css")
+    body#personalInfoTel_page.app.auth_page
+
+        header
+            a.icon.icon_back(href="personalInfo.html")
+            h1.title
+            .line
+        section.container
+            form.padding_l_r#personalInfoTel(method="post")
+                input#oldtel(type="text",name="oldtel",data-rule="number",placeholder="请输入旧手机号",readonly="true")
+                input#newTel(type="text",name="newTel",data-rule="number",placeholder="请输入新手机号",maxlength="11")
+                .h_input_group
+                    input#telyzm(type="text",name="telyzm",data-rule="number",placeholder="请输入验证码",maxlength="6")
+                    input.btn_yzm#sendcode(type="button",value="获取验证码")
+
+                input#submit_btn.btn.red_btn(type="button",value="确  认")
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/personal/personalInfoTel.js")
+                                                   

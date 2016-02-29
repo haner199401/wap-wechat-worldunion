@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+    head
+        include com/meta
+        title 评估结果
+        link(rel="stylesheet" ,href="/assets/styles/my/result.min.css")
+    body
+        header
+            a.icon.icon_back
+            h1.title
+            a.del_btn 删除
+        input(type="hidden",name="hasLoan")
+        section.container#wu-detail
+        include com/footer
+        script(type="text/javascript",src="/assets/scripts/gauge_fail.js")
+        script(type="text/html",id="wu-detail-tmpl").
+            <div class="slider">
+                <div class="house_info">
+                    <p class="t_c f_x"><!--[=projectName || '']--></p>
+                    <p class="t_c"><!--[=buildName || '']--> <!--[=roomCode || '']--></p>
+                    <p class="t_c"><!--[=$number2Fixed(assessment.area)]-->㎡</p>
+                </div>
+            </div>
+            <img src="/assets/image/pic_gubuchulai@2x.png" class="gauge_fail_img">
+            <div class="btn red_btn btns"><a id="finace">再融资</a><a id="rent">出租</a><a id="sale">出售</a></div>

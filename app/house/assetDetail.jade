@@ -1,0 +1,48 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 净资产详细
+        link(rel="stylesheet" ,href="/assets/styles/my/asset_detail.min.css")
+    body
+        header
+            a.icon.icon_back
+            h1.title
+            a#go_anjie 按揭信息
+        .mr
+        section.container#data-list
+            .pie#donut_chart
+            .detail_table#wu-detail
+
+            .plan_list
+                p 还款计划
+                ul#wu-list
+                    li
+                        p 日期
+                        p 本金
+                        p 利息
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/base/d3.v3.min.js")
+        script(type="text/javascript",src="/assets/scripts/house/asset_detail.js")
+        script(type="text/html",id="wu-detail-tmpl")
+            | <div class="t_tr">
+            | <p class="tag">已还利息：</p>
+            | <p><!--[=$formatMoney(yetInterest) || 0]-->万</p>
+            | </div>
+            | <div class="t_tr">
+            | <p class="tag">已还本金：</p>
+            | <p><!--[=$formatMoney(yetPrincipal) || 0]-->万</p>
+            | </div>
+            | <div class="t_tr">
+            | <p class="tag">未还利息：</p>
+            | <p><!--[=$formatMoney(unInterest) || 0]-->万</p>
+            | </div>
+        script(type="text/html",id="wu-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li>
+            | <p><!--[=$formatDate(list[i].refundDate,6)]--></p>
+            | <p><!--[=list[i].principal]-->元</p>
+            | <p><!--[=list[i].interest]-->元</p>
+            | </li>
+            | <!--[}]-->

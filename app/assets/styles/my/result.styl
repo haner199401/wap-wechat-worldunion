@@ -1,0 +1,189 @@
+@import '../common/common'
+
+body
+  background #FFFFFF
+
+header
+  border-bottom none
+  .del_btn
+    color #ce3128
+    padding 0 0.75rem
+
+.slider
+  position relative
+  background url("/assets/image/pic_pingu@2x.png") no-repeat center
+  background-size 100%
+  height 8.1rem
+  & .house_info
+    line-height 25px
+    padding-top: 2rem;
+    color: #fff;
+.gauge_fail_img
+  width 11.5rem
+  display block
+  margin 2rem auto
+
+.list
+  padding 0 0.75rem
+  margin-bottom 2rem
+  .item
+    border-bottom 1px solid $Input_bottom_line_cl
+    &.noborder
+      border-bottom none
+    & p
+      flex 1
+      color #CE3128
+      &.f_nor
+        color #333
+    & #comment
+      width: 3.55rem;
+      height: 1.4rem;
+      border-radius: 5px;
+      border: none;
+      background: #323F62;
+      color: #fff;
+      & i
+        background: url("/assets/image/icon__tucao@2x.png") no-repeat left center;
+        width: 2.5rem;
+        height: 0.8rem;
+        line-height @height
+        background-size: .7rem;
+        padding-left: 10px;
+    & .red_btn
+      padding 10px
+    & .up
+      color #CE3128
+      position relative
+      padding-right 0.4rem
+      &:after
+        content ''
+        background url("/assets/image/icon__down@2x.png") no-repeat center
+        background-size 100%
+        width: 0.3rem;
+        height: 0.65rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0
+    & .down
+      color #82CF5F
+      position relative
+      padding-right 0.4rem
+      &:after
+        content ''
+        background url("/assets/image/icon__up@2x.png") no-repeat center
+        background-size 100%
+        width: 0.3rem;
+        height: 0.65rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0
+#buy
+  border-right transparent
+
+.btn_yzm
+  font-size: 14px;
+  margin: auto;
+  width: 4rem;
+  border: 1px solid #333;
+  color: #333;
+  text-align: center;
+
+.container .btns
+  width 100%
+  display -webkit-box
+  F_borderRadius(0px)
+  padding: .5rem;
+  font-size: 16px
+  position fixed
+  bottom 0
+  left 0
+  right 0
+  & a
+    -webkit-box-flex 1
+    display block
+    height 1.5rem
+    line-height @height
+    color #ffffff
+    text-align center
+    &:nth-child(2)
+      border-left 1px solid #fff
+      border-right 1px solid #fff
+#line
+  height 10rem
+
+.line_chart{
+  height:400px;
+  width:600px;
+  margin: auto;
+  border: 1px solid #333;
+}
+.line{
+  fill:none;
+  stroke:#86d35f;
+  stroke-width:2;
+}
+.domain ,.tick line{
+  stroke:gray;
+  stroke-width:1;
+  display: none;
+}
+.chart_circle{
+  stroke: #86d35f;
+  stroke-width: 2;
+  fill: #fff;
+}
+
+//饼状图
+.pie
+  height 10rem
+  width 100%
+text{
+  font-weight 100;
+}
+.pie svg{
+  width: 100%;
+  height: 100%;
+}
+path.slice{
+  stroke-width:2px;
+}
+
+polyline{
+  fill: none;
+  stroke-width:2px;
+}
+
+.xAxis_info
+  margin-bottom 0.75rem
+.xAxis_info > div
+  display -webkit-box
+  margin 0.2rem
+  span
+    -webkit-box-flex 1
+    display: block;
+    text-align: center
+    position relative
+
+.xAxis_info .labels span
+  padding-left 10px
+  &:after
+    position absolute
+    left 0
+    content ' '
+    border 7px solid #343E61
+  &:first-child:after
+    border 7px solid #D02F27
+  &:last-child:after
+    border 7px solid #890300
+
+.xAxis_info .money_info span
+  color #343E61
+  &:after
+    content ' 万'
+  &:first-child
+    color #D02F27
+  &:last-child
+    color #890300
+

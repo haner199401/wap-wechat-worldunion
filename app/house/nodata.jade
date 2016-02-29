@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 使用反馈
+        link(rel="stylesheet" ,href="/assets/styles/my/usesuggest.min.css")
+    body
+        #suggest_page.app
+            header
+                a.icon.icon_back
+                h1.title
+            .mr
+            section.container
+                form#suggest
+                    textarea.f_b(placeholder="请输入你想找的{}，我们将尽快处理..." name="content",maxlength="140")
+                    input.btn.red_btn(type="submit",value="提交")
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/house/usesuggest.js")

@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 我的房产
+        link(rel="stylesheet" ,href="/assets/styles/my/nohouse.min.css")
+    body
+
+        //header
+        header
+            a.icon.icon_back(href="../index.html")
+            h1.title
+            a.icon.icon_personal(href="#")
+
+        //container
+        section.container.f_b
+            .t_c
+                img.nohouse(src="/assets/image/pic__wufangc@2x.png")
+            .t_c 请添加您的房产,
+            .t_c 我们可为您估价房产及核算资产净值
+            a.hrefa(href="/house/addHouse.html?t=self")
+                button.btn.red_btn.f_x 添加
+
+        include ../com/footer

@@ -1,0 +1,51 @@
+@import '../common/common'
+
+/**
+ * �ҵĽ��
+ */
+body
+  background-color #EFEFEF
+#myJiedai_page
+ & header
+   border-bottom none
+   background rgba(255, 255, 255, 1)
+   position absolute
+   width 100%
+   z-index 2
+ & .container
+   //position absolute;
+   height 100%
+   .data_show
+     position relative;
+     top 2.2rem
+     width 90%
+     padding 0.5rem
+     background-color #fff
+     box-shadow: 0 0 5px 1px #D4D4D4
+     img
+       position relative
+       width 5rem
+       height 5rem
+       padding 0.7rem 0.3rem 0.3rem 0.3rem
+     .showStatus
+       position relative
+       padding 0.3rem
+     .data_detail
+       position absolute
+       color #848a9e
+       left 6rem
+       top 2rem
+       padding 0
+       span
+         position relative
+         left 0.5rem
+         color #2f323b
+       .data_li
+         margin 0.2rem
+       .sqzt
+         color #d02f28
+     &:nth-child(1n+0)
+       margin 0.8rem
+       border 0.05rem solid #D4D4D4
+     &:last-child
+       margin 0.8rem 0.8rem 2rem 0.8rem

@@ -1,0 +1,20 @@
+doctype html
+html(lang="en")
+    head
+        title 小区
+    body
+
+        #choose_xq.app.page.out(data-callback="initPageData")
+            header
+                a.icon.icon_back(href="#add_house",data-rel="back" data-reload)
+                h1.title 小区
+
+            section.container
+                .mr
+                    #search.search_form.clearfix
+                        input.fl(type="text",name="key",placeholder="搜索小区名称")
+                        input#searck_btn.fr(type="button",value="")
+
+                ul.data_list#project_list
+
+                button.not_found(data-type="?type=xq") 找不到想要的

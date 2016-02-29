@@ -1,0 +1,103 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 出售
+        link(rel="stylesheet" ,href="/assets/styles/swiper.min.css")
+        link(rel="stylesheet" ,href="/assets/styles/my/sale.min.css")
+    body.app
+        header
+            a.icon.icon_back
+            h1.title
+
+        section.container
+
+            form#sale
+                //.house_name.clearfix
+                //    h1.fl 万科四季城
+                //    h1.fr 方言
+                //
+                //ul.upload_img_area.clearfix
+                //    li
+                //        img
+                //
+                //.mr.title.tag 房源信息
+                //.padding_left
+                //    .input_group
+                //        label.tag 装修情况：
+                //
+                //    .input_group
+                //        label.tag 户型：
+                //        span 1房1室1厅
+                //    .input_group
+                //        label.tag 面积：
+                //        span 12
+                //        span.tag ㎡
+                //
+                //.mr.title.tag 特色
+                //.padding_left
+                //    .input_group
+                //        label 产权满两年
+                //    .input_group
+                //        label 产权满两年
+                //
+                //.mr.title.tag 期望售价
+                //.padding_left
+                //    .input_group
+                //        label.tag 售价：
+                //        span 12
+                //        span.tag 万
+                //    .input_group
+                //        label.tag 备注：
+                //        p dwadawdawdwa
+                //    .input_group
+                //        label.tag 审核状态：
+                //        span.f_color_ce3128 受理中
+
+        include ../com/swipe
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/plugin/swiper.min.js")
+        script(type="text/javascript",src="/assets/scripts/house/saled.js")
+        script(type="text/html",id="wu-detail-tmpl").
+            <div class="house_name clearfix">
+            <h1 class="fl"><!--[=projectName]--></h1>
+            <h1 class="fr"><!--[=buildName]--><!--[=roomCode]--></h1>
+            </div>
+            <ul class="upload_img_area clearfix">
+            <!--[if(houseImgs&&houseImgs.length){]-->
+            <!--[for(i=0;i<houseImgs.length;i++){]-->
+            <li><img src="<!--[=houseImgs[i].imgAddress]-->"></li>
+            <!--[}]-->
+            <!--[}]-->
+            </ul>
+            <div class="mr title tag">房源信息</div>
+            <div class="padding_left">
+                <div class="input_group">
+                    <label class="tag">装修情况：</label><label><!--[=decorationMeaning]--></label>
+                </div>
+                <div class="input_group">
+                    <label class="tag">户型：</label><label><!--[=cHouse]-->室<!--[=cHall]-->厅<!--[=cToilet]-->卫</label>
+                </div>
+                <div class="input_group">
+                    <label class="tag">面积：</label><span><!--[=area]--></span><span class="tag">㎡</span>
+                </div>
+            </div>
+            <div class="mr title tag">特色</div>
+            <div class="padding_left" id="h_feature">
+            </div>
+            <div class="mr title tag">期望售价</div>
+            <div class="padding_left">
+                <div class="input_group">
+                    <label class="tag">售价：</label><span><!--[=$formatMoney(entrustPrice) || 0]--></span><span class="tag">万</span>
+                </div>
+                <div class="input_group">
+                    <label class="tag">审核状态：</label><span class="f_color_ce3128"><!--[=statusMeaning]--></span>
+                </div>
+            </div>
+            <div class="mr title tag">其他说明</div>
+            <div class="padding_left">
+                <div class="input_group textarea">
+                <!--[=remark || '暂无备注']-->
+                </div>
+            </div>
+

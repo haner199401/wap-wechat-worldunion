@@ -1,0 +1,476 @@
+@import './utils'
+@import './val'
+@import './animate'
+
+/*general start*/
+body,p,blockquote,figure,hr,h1,h2,h3,h4,h5,h6,ul,menu,dir,ol,dl,dd,fieldset,input[type=radio],input[type=checkbox],input[type=range],pre,xmp,plaintext,listing {
+  margin: 0;
+}
+
+ul,menu,dir,ol,legend,fieldset,input,input[type=password],input[type=search],isindex,textarea,input[type=hidden],input[type=image],input[type=file],input[type=radio],input[type=checkbox],input[type=range],input[type=button],input[type=submit],input[type=reset],button {
+  padding: 0;
+}
+input[type=search],input[type=button],input[type=submit],input[type=reset]{
+  -webkit-appearance: none;
+}
+hr,h1,h2,h3,h4,h5,h6{
+  font-weight normal;
+}
+cite,var,address,em {
+  font-style: normal;
+}
+
+strong {
+  font-weight: 400;
+}
+
+a:-webkit-any-link,a:hover,a:visited,a:active {
+  text-decoration: none;
+  color #333
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,iframe {
+  border: 0;
+}
+
+ol,ul {
+  list-style: none;
+}
+
+select,button,input {
+  color: inherit;
+}
+
+html {
+  -webkit-text-size-adjust: none;
+}
+
+a{
+  color: #333;
+}
+
+em {
+  font-style: normal;
+}
+
+.clearfix{
+  zoom:1;
+}
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.f_x{
+  font-size: 20px;
+}
+.f_l{
+  font-size: 18px;
+}
+.f_b{
+  font-size: 14px;
+}
+.f_n{
+  font-size: 12px;
+}
+
+.f_color_ce3128
+  color #ce3128
+
+//盒模型
+*,
+*:after,
+*:before
+  box-sizing border-box
+
+// float
+.fr
+  float right
+.fl
+  float left
+
+// text_align
+.t_c
+  text-align center
+.t_r
+  text-align right
+.t_l
+  text-align left
+
+.hrefa
+  display block
+
+body
+  background-color $Global_bg
+  font-family Helvetica, Arial, sans-serif
+  font-size 14px
+  margin auto
+
+/* construction */
+html, body, .app {
+  height: 100%; width: 100%;
+}
+.app
+  position absolute
+  top 0
+  left 0
+  & .mr
+    background #EFEFEF
+
+//header
+header
+  position relative
+  height 2.125rem
+  line-height @height
+  border-bottom 1px solid #E9E9E9
+  background #FFFFFF
+  & a
+    position absolute
+    top 0
+    right 0
+    &:first-child
+      left 0
+    &.icon
+      width 2.15rem
+      height: 100%
+      z-index 2
+  & .title
+    font-size 18px
+    text-align center
+    display none
+
+.container
+  margin auto
+  width 16rem
+  max-width 480px
+
+//加载更多
+.wlist_next {
+  display: block;
+  padding: .8rem 0;
+  text-align: center;
+}
+
+//Toast
+#wu-toast
+  position fixed
+  left 0
+  right 0
+  bottom 50px
+  text-align center
+  display none
+  z-index 100
+  & span
+    display inline-block
+    padding 0.625rem 0.875rem
+    color #fff
+    background $Toast_bg
+    font-size 0.7rem
+    F_borderRadius(5px)
+
+//Dialog
+#dialog
+  width 12.525rem
+  position fixed
+  left 50%
+  top 30%
+  margin-left -(@width/2)
+  z-index 100
+  background $Dialog_bg
+  F_borderRadius(5px)
+  font-size 0.7rem
+  display none
+  & .dialog_msg
+    text-align center
+    margin 0
+    border-bottom 1px solid $Dialog_border_cl
+    min-height 4.125rem
+    padding 1.3rem
+  & .options .btn
+    width 6.25rem
+    height 2.2rem
+    line-height @height
+    border-right 1px solid $Dialog_border_cl
+    text-align center
+    color $Dialog_btn_cl
+    F_borderRadius(0px)
+    &:last-child
+      border-right 1px solid transparent
+
+//Dialog layer
+#dialog_bg
+  position fixed
+  left 0
+  right 0
+  top 0
+  bottom 0
+  background $Dialog_layer_bg
+  display none
+  z-index 99
+
+
+
+//form srtyle
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder
+  color $Placeholder_cl
+
+
+//icon
+.icon
+  display inline-block
+  background-repeat no-repeat
+  background-size 100%
+  background-position center center
+
+.icon_mobile
+  width 0.8rem
+  height: 1.2rem
+  background-image url("/assets/image/icon_mobile.png")
+.icon_pwd
+  width 0.8rem
+  height: 1.2rem
+  background-image url("/assets/image/icon_pwd.png")
+
+.icon_back
+  background-image: url("/assets/image/icon__fanhui@2x.png");
+  background-size: 0.7rem auto;
+.icon_personal
+  background-image url("/assets/image/icon__my@2x.png")
+  background-size: 1.2rem auto;
+.icon_addasset
+  background-image url("/assets/image/icon_add@2x.png")
+  background-size: 1.2rem auto;
+.icon_address
+  width 0.65rem
+  height  0.75rem
+  background-image url("/assets/image/icon__dingwei@2x.png")
+  background-position left
+.icon_next
+  width 0.65rem
+  height 100%
+  background-image url("/assets/image/icon__jinru@2x.png")
+.icon_menu
+  width 0.65rem
+  height 100%
+  background-image url("/assets/image/icon_menu@2x.png")
+  background-size 1.2rem auto
+
+
+//btns
+.btn
+  display block
+  border none
+  outline none
+  F_borderRadius(5px)
+  color #fff
+
+.red_btn
+  background #DA1F28
+
+.icon_btn
+  display inline-block
+  position relative
+
+form
+  &.padding_left
+    padding-left 0.75rem
+  &.padding_l_r
+    padding 0 0.75rem
+  .padding_left
+    padding-left 0.75rem
+    & .input_group:last-child
+      border-bottom none
+
+  .input_group
+    border-bottom 1px solid $Input_bottom_line_cl
+    display -webkit-box
+    align-items center
+    height 2.5rem
+    position relative
+    &.textarea
+      height auto
+      min-height 2.5rem
+      line-height 1.2rem
+      padding 0
+      -webkit-box-align baseline
+      .remark
+        -webkit-box-flex 1
+        word-break break-all
+    &.checkbox
+      label
+        display -webkit-box
+        -webkit-box-flex 1
+      & i
+        display inline-block
+        background-image url("/assets/image/icon__weixuan@2x.png")
+        background-position center
+        background-repeat no-repeat
+        width 1.125rem
+        height @width
+        background-size 100%
+        &.active
+          background-image url("/assets/image/icon__yixuan@2x.png")
+
+    input[type="radio"],input[type="text"],input[type="number"],input[type="tel"]
+      color #000
+      outline none
+      border none
+      padding .5rem
+      font-size 14px
+      background transparent
+      text-align right
+      display -webkit-box
+      -webkit-box-flex 1
+    & .select
+      position relative
+      -webkit-box-flex 1
+      & input
+        width 100%
+        padding 0.5rem 0
+      & select
+        opacity 0
+        position absolute
+        top 0
+        left  0
+        width 100%
+        margin: 0.5rem 0
+    .single_select
+      -webkit-box-flex: 1;
+      flex: 1;
+      display: block;
+      -webkit-appearance: none;
+      background: transparent;
+      border: transparent;
+      height: 100%;
+      width @height
+      opacity 0
+      outline none
+      position absolute
+      left 0
+
+    & label.radio
+      position relative
+      padding 0 1rem
+      display -webkit-box
+
+    & input[type="radio"]
+      -webkit-appearance none
+      appearance none
+      border none
+      outline none
+      width 16px
+      height 16px
+      background-image: url("/assets/image/icon__danxuanw@2x.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% auto;
+      padding 0
+      position absolute
+      left 0
+      &:checked
+        background-image: url("/assets/image/icon__danxuany@2x.png");
+
+  input[type="submit"]
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: .85rem;
+    display: block;
+    width: 100%;
+    margin: 1.375rem 0;
+    padding 10px;
+    F_borderRadius(5px)
+    background #DA1F28
+    &.active
+      background #bcbdb3
+  .sub_btn
+    padding-right 0.75rem
+  #submit_btn
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: .85rem;
+    display: block;
+    width: 100%;
+    margin: 1.375rem 0;
+    padding 10px;
+    F_borderRadius(5px)
+    background #DA1F28
+    &.active
+      background #bcbdb3
+
+  input[type="file"]
+    opacity 0
+    position absolute
+    top 0
+    left 0
+
+.list
+  .item
+    border-bottom 1px solid $Input_bottom_line_cl
+    display flex
+    align-items center
+    height 2.5rem
+
+.tag
+    color $Placeholder_cl
+
+//  tools
+.hide
+  display none
+
+.no_padding_r
+  padding-right 0
+
+.custom_height
+  height 5rem
+
+.btn_yzm
+  //width: 4.05rem;
+  //height: 1.45rem;
+  border: 1px solid;
+  border-radius: 5px;
+  background: #FFFFFF
+  font-size 14px
+  padding 0.3rem
+
+  &.disable
+    background #c3c3c3
+    cursor not-allowed
+
+//form layer
+.login_dialog
+  display none
+  F_borderRadius(5px)
+  F_center(14.25rem,10rem)
+  z-index: 100
+  background: #fff
+  padding: 0.75rem
+
+#login_form input[type="text"], #login_form input[type="number"], #login_form input[type="tel"]
+  text-align left
+
+ul.data_list
+  padding-left 0.75rem
+  font-size 14px
+  li
+    border-bottom 1px solid #C8C8C8
+    height 2.5rem
+    line-height @height
+    position relative
+    & a
+      display block
+      &.active
+        background url("/assets/image/icon__gouxuan@2x.png") no-repeat
+        background-position: 93% center;
+        background-size: 1.2rem auto;

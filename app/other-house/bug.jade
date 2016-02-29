@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 我要买
+        link(rel="stylesheet" ,href="/assets/styles/other-house/buged.min.css")
+    body
+        .app
+            header
+                a.icon.icon_back
+                h1.title
+
+            form#bug
+                input(type="hidden",name="type",value="3")
+                input(type="hidden",name="personalId")
+                input(type="hidden",name="entrustPrice")
+                input(type="hidden",name="taxesTotal")
+                .input_group
+                    label 业主姓名：
+                    input(type="text",name="fullName",maxlength="15")
+                .input_group
+                    label 业主电话：
+                    input(type="text",name="mobiletel",data-rule="number",maxlength="11")
+                .input_group
+                    label 交易金额：
+                    input(type="text",name="h_entrustPrice",data-rule="number",maxlength="6")
+                    span.tag W
+                .input_group
+                    label 备注：
+                    input(type="text",style="padding-right:0;",name="remark",placeholder="--",maxlength="140")
+                .sub_btn
+                    input(type="submit",value="提交")
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/other-house/bug.js")

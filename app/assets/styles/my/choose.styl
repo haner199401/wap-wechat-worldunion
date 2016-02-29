@@ -1,0 +1,31 @@
+@import '../common/common'
+
+body
+  background #FFFFFF
+
+.mr
+  background $Global_bg
+
+ul.data_list
+  padding-left 0.75rem
+  font-size 14px
+  li
+    border-bottom 1px solid #C8C8C8
+    height 2.5rem
+    line-height @height
+    position relative
+    &.active
+      background url("/assets/image/icon__gouxuan@2x.png") no-repeat
+      background-position: 93% center;
+      background-size: 1.2rem auto;
+
+.not_found
+  width: 4.875rem;
+  height: 1.375rem;
+  border: 1px solid;
+  border-radius: 5px;
+  background: #F2F2F2
+  font-size 14px
+  position: fixed
+  bottom 1.75rem
+  right 0.75rem

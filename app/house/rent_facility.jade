@@ -1,0 +1,11 @@
+doctype html
+html(lang="en")
+    head
+        title 配套设施
+    body
+        #choose_zx.page.out.app(data-onpagefirstinto="getHouseOtherData",data-title="配套设施")
+            header
+                a.icon.icon_back(href="#rent_page",data-rel="back")
+                h1.title 配套设施
+            section.container
+                ul.data_list#rf_list(data-t-for="rf",data-v-for="h_rf")

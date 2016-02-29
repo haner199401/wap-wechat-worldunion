@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+    head
+        title 意见反馈
+        include ../com/meta
+        link(rel="stylesheet" ,href="/assets/styles/personal/suggestion.min.css")
+    body
+        section#suggestion_page.app.auth_page.refresh_page
+            header
+                a.icon.icon_back(href="personalCenter.html")
+                h1.title
+                .mr
+            section.container
+                form.padding_l_r#suggestion(method="post")
+                    .textSuggestion
+                        textarea.yj(name="yj",placeholder="我有话要说...",maxlength="1000")
+
+                    input#submit_btn.btn.red_btn(type="button",value="提  交")
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/personal/suggestion.js")
+                                                   

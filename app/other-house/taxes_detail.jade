@@ -1,0 +1,90 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 税费明细
+        link(rel="stylesheet" ,href="/assets/styles/other-house/taxes_detail.min.css")
+    body
+        header
+            a.icon.icon_back(href="javascript:history.go(-1);")
+            h1.title
+
+        section.container#data-list
+            .plan_list
+                ul#wu-detail
+            .taxes_info
+                div
+                    p 税费合计
+                    p.f_x.f_color_ce3128#taxesTotal 0
+                div
+                    p 抵押净值
+                    p.f_x.f_color_ce3128#pledgeValue 0
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/other-house/taxes_detail.js")
+        script(type="text/html",id="wu-detail-tmpl").
+            <li>
+            <p>税/费种</p>
+            <p>税率%</p>
+            <p>税费</p>
+            </li>
+
+            <li>
+                <p>营业税</p>
+                <p><!--[=businessRate || 0]--></p>
+                <p><!--[=businessTax || 0]--></p>
+            </li>
+
+            <li>
+            <p>城建税</p>
+            <p><!--[=constructionRate || 0]--></p>
+            <p><!--[=constructionTax || 0]--></p>
+            </li>
+
+            <li>
+            <p>教育附加费</p>
+            <p><!--[=ducationRate || 0]--></p>
+            <p><!--[=ducationTax || 0]--></p>
+            </li>
+
+            <li>
+            <p>地方性教育附加费</p>
+            <p><!--[=localDucationRate || 0]--></p>
+            <p><!--[=localDucationTax || 0]--></p>
+            </li>
+
+            <li>
+            <p>印花税</p>
+            <p><!--[=stampRate || 0]--></p>
+            <p><!--[=stampTax || 0]--></p>
+            </li>
+
+            <li>
+            <p>土地增值税</p>
+            <p><!--[=landRate || 0]--></p>
+            <p><!--[=landTax || 0]--></p>
+            </li>
+
+            <li>
+            <p>契税（原买家）</p>
+            <p><!--[=oldDeedRate || 0]--></p>
+            <p><!--[=oldDeedTax || 0]--></p>
+            </li>
+
+            <li>
+            <p>契税（新买家）</p>
+            <p><!--[=newDeedRate || 0]--></p>
+            <p><!--[=newDeedTax || 0]--></p>
+            </li>
+
+            <li>
+            <p>房地产交易费</p>
+            <p><!--[=tradingFeeRate || 0]--></p>
+            <p><!--[=tradingFee || 0]--></p>
+            </li>
+
+            <li>
+            <p>拍卖诉讼费</p>
+            <p><!--[=briefFeeRate || 0]--></p>
+            <p><!--[=briefFee || 0]--></p>
+            </li>

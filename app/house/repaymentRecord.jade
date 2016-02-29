@@ -1,0 +1,85 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 提前还款记录
+        link(rel="stylesheet" ,href="/assets/styles/my/repayment.min.css")
+        link(rel="stylesheet" ,href="/assets/scripts/plugin/mobiscroll/mobiscroll-core.css")
+        link(rel="stylesheet" ,href="/assets/scripts/plugin/mobiscroll/mobiscroll-android.css")
+    body
+        #repayment_page.app
+            header
+                a.icon.icon_back(href="javascript:history.go(-1);")
+                h1.title
+            .mr
+            section.container
+                form#repayment
+                    input(type="hidden", name="refundPrice")
+                    input(type="hidden", name="refundDate")
+                    input(type="hidden", name="mortgageInfoId")
+                    input(type="hidden", name="id")
+                    input(type="hidden", name="pid")
+
+                    .input_group
+                        label 还款金额
+                        input(type="text",name="h_refundPrice",maxlength="4")
+                        span.tag W
+                    .input_group
+                        label 还款时间
+                        input(type="text" style="padding-right:0" id="datepicker" placeholder="年月" readonly="readonly")
+
+                    .input_group(style="border-bottom:none")
+                        label.radio
+                            input(type="radio",name="refundType" , value="K" checked="checked")
+                            span 缩短还款期限,月还款额基本不变
+                    .input_group
+                        label.radio
+                            input(type="radio",name="refundType" , value="Y")
+                            span 减少月还款额,还款期限不变
+
+                    .sub_btn
+                        input(type="submit",value="提交")
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/plugin/mobiscroll/mobiscroll.js")
+        script(type="text/javascript",src="/assets/scripts/house/save_record.js")
+        script(type="text/html",id="wu-detail-tmpl")
+            | <input type="hidden" name="refundDate" value="<!--[=refundDate]-->">
+            | <input type="hidden" name="refundPrice" value="<!--[=refundPrice]-->" >
+            | <input type="hidden" name="mortgageInfoId" value="<!--[=mortgageInfoId]-->">
+            | <input type="hidden" name="id" value="<!--[=id]-->">
+            | <input type="hidden" name="pid">
+            | <div class="input_group">
+            | <label>还款金额</label>
+            | <input type="text" name="h_refundPrice" maxlength="4" value="<!--[=$formatMoney(refundPrice)]-->"><span class="tag">W</span>
+            | </div>
+            | <div class="input_group">
+            | <label>还款时间</label>
+            | <input type="text" id="datepicker" placeholder="年月" style="padding-right:0" readonly="readonly" value="<!--[=$formatDate(refundDate,5)]-->">
+            | </div>
+            | <!--[if(refundType){]-->
+            | <div style="border-bottom:none" class="input_group">
+            | <label class="radio">
+            |     <input type="radio" name="refundType" value="K" <!--[if(refundType == 'K'){]-->checked="checked" <!--[}]--> ><span>缩短还款期限,月还款额基本不变</span>
+            | </label>
+            | </div>
+            | <div class="input_group">
+            | <label class="radio">
+            |     <input type="radio" name="refundType" value="Y" <!--[if(refundType == 'Y'){]-->checked="checked" <!--[}]--> ><span>减少月还款额,还款期限不变</span>
+            | </label>
+            | </div>
+            | <!--[}else{]-->
+            | <div style="border-bottom:none" class="input_group">
+            | <label class="radio">
+            | <input type="radio" name="refundType" value="K" checked="checked"><span>缩短还款期限,月还款额基本不变</span>
+            | </label>
+            | </div>
+            | <div class="input_group">
+            | <label class="radio">
+            | <input type="radio" name="refundType" value="Y"><span>减少月还款额,还款期限不变</span>
+            | </label>
+            | </div>
+            | <!--[}]-->
+            | <div class="sub_btn">
+            | <input type="submit" value="提交">
+            | </div>

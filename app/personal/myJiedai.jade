@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 我的贷款
+        link(rel="stylesheet" ,href="/assets/styles/personal/myJiedai.min.css")
+    body
+        #myJiedai_page.app.auth_page.refresh_page
+            header
+                a.icon.icon_back(href="personalCenter.html")
+                h1.title
+
+            section.container
+                ul.house#wu-list
+
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/personal/myJiedai.js")
+        script(type="text/html",id="wu-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <div class="data_show" data-id="<!--[=list[i].id]-->" data-type="<!--[=list[i].type]-->"><span class="showStatus"><!--[=list[i].roomFullString]--></span>
+            | <br><img src="/assets/image/pic__daikuan@2x.png">
+            | <div class="data_detail">
+            | <div class="data_li"><label>申请金额:</label><span class="sqje"><!--[=$formatMoney(list[i].loanPrice)]--></span><span class="wan"> 万</span></div>
+            | <div class="data_li"><label>批准金额:</label><span class="pzje"><!--[=$formatMoney(list[i].ratifyPrice) || '--']--></span></div>
+            | <div class="data_li"><label>申请日期:</label><span class="pzje"><!--[=$formatDate(list[i].applyDate,6)]--></span></div>
+            | <div class="data_li"><label>申请状态:</label><span class="sqzt"><!--[=list[i].statusMeaning]--></span></div></div></div>
+            | <!--[}]-->

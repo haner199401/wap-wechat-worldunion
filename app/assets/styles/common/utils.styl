@@ -1,0 +1,49 @@
+//圆角
+F_borderRadius(val = 10px)
+  border-radius val
+
+//文本省略号
+F_ellipsis(val=50px)
+  display: block
+  max-width: val
+  width :val
+  word-spacing: normal
+  text-overflow: ellipsis
+  overflow: hidden
+  word-break: break-all
+  word-wrap: break-word
+  white-space: nowrap
+
+//垂直,水平居中
+F_center(w = 0,h = 0)
+  width: w
+  height: h
+  margin-left: -(w / 2)
+  margin-top: -(h / 2)
+  position absolute
+  left 50%
+  top 50%
+
+//垂直居中
+F_center_v(h = 0)
+  height: h
+  margin-top: -(h / 2)
+  position absolute
+  top 50%
+
+//水平居中
+F_center_h(w = 0)
+  width w
+  margin-left: -(w / 2)
+  position absolute
+  left 50%
+
+F_create_btn(args)
+  width args[0]
+  height args[1]
+  border 1px solid args[2]
+  F_borderRadius(args[3])
+  background $LogoBg url(args[4]) repeat-x
+  display block
+  background-size 100% 100%
+

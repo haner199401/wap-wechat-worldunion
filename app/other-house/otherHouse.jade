@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 关注房产
+        link(rel="stylesheet" ,href="/assets/styles/my/myhouse.min.css")
+    body.app.auth_page.refresh_page
+        header
+            a.icon.icon_back(href="/index.html")
+            h1.title
+            a.icon.icon_addasset(href="/other-house/addHouse.html")
+        .mr
+        section.container
+            ul.house#wu-list
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/other-house/other_house.js")
+        script(type="text/html",id="wu-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li class="clearfix" data-id="<!--[=list[i].id]-->">
+            | <p class="house_title"><!--[=list[i].projectName]-->-<span class="f_b"><!--[=list[i].buildName]--><!--[=list[i].roomCode]--></p>
+            | <div class="house_price">
+            | <p><span class="tag">估值：</span><span><span class="assetTotalPrice"><!--[=$formatMoney(list[i].assessment.assetTotalPrice) || 0]--> </span>万</span></p>
+            | <p><span class="tag">税费：</span><span><!--[=$calcMoney(list[i].taxesTotal,1) || 0]--> 万</span></p>
+            | </div>
+            | </li>
+            | <!--[}]-->

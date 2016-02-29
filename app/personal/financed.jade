@@ -1,0 +1,85 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 贷款明细
+        link(rel="stylesheet" ,href="/assets/styles/my/asset_detail.min.css")
+    body
+        #finance_page.app.auth_page
+            header
+                a.icon.icon_back
+                h1.title
+            .mr
+            form#wu-detail
+
+            input.btn.btn_yzm.hide#calc_btn(type="button",value="利息计算")
+            //利息计算
+            section.container#interest
+
+                .pie#donut_chart
+                .xAxis_info
+                    .labels.tag
+                        span 应还本金
+                        span 应还利息
+                        span 手续费
+
+                    .money_info
+                        span#loanAmount 0
+                        span#interestTotal 0
+                        span#poundage 0
+
+                input.btn.btn_yzm.hide#plan_btn(type="button",value="还款计划")
+
+                .plan_list
+                    ul#plan_list
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/base/d3.v3.min.js")
+        script(type="text/javascript",src="/assets/scripts/house/financed.js")
+        script(type="text/html",id="wu-detail-tmpl").
+            <section class="container">
+            <input type="hidden" name="assessment" value="<!--[=assetTotalPrice|| 0]-->" />
+            <input type="hidden" name="netAssets" value="<!--[=assetTotal|| 0]-->" />
+            <input type="hidden" name="loanableFunds" value="" />
+            <input type="hidden" name="loanPrice" value="<!--[=loanPrice]-->" />
+            <input type="hidden" name="loanDeadline" value="<!--[=loanDeadline]-->" />
+            <input type="hidden" name="type" value="1" />
+            <input type="hidden" name="personalId" value="" />
+
+            <h1 class="f_l"><!--[=projectName || '']--> <span class="f_b"><!--[=buildName || '']--><!--[=roomCode || '']--></span></h1>
+            <div class="my_asset">
+            <div>
+            <p class="tag">房产估值：</p>
+            <p id="asset_total"><!--[=$formatMoney(assessment) || 0]--></p>
+            </div>
+            <div>
+            <p class="tag">当前净值：</p>
+            <p id="net_asset_total"><!--[=$formatMoney(netAssets) || 0]--></p>
+            </div>
+            </div>
+            <div id="gauge_result">
+            <p class="tag">预计可贷金额：</p><span  class="f_color_ce3128"><!--[=$formatMoney(loanableFunds) || 0]--></span>
+            </div>
+            </section>
+            <div id="personal_info">
+            <div class="input_group">
+            <label>真实姓名：</label>
+            <label><!--[=fullName|| '']--></label>
+            </div>
+            <div class="input_group">
+            <label>身份证号：</label>
+            <label><!--[=identityCard|| '']--></label>
+            </div>
+            <div class="input_group">
+            <label>申请金额：</label>
+            <label><!--[=$formatMoney(loanPrice)|| 0]-->万</label>
+            </div>
+            <div class="input_group">
+            <label>申请期限：</label>
+            <label id="loanDeadline"></label>
+            </div>
+            <div class="input_group">
+            <label>申请状态：</label>
+            <label class="f_color_ce3128"><!--[=statusMeaning]--></label>
+            </div>
+            </div>

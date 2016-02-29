@@ -1,0 +1,148 @@
+@import '../common/common'
+
+header .title
+  display block
+
+.mr
+  padding 0.75rem
+  #loacation_btn
+    color #818392
+
+//    城市列表
+.city_list
+  width: 14.4rem;
+  margin: auto
+  li
+    width 4.3rem
+    height 2.25rem
+    float left
+    border 1px solid $Input_bottom_line_cl
+    F_borderRadius(5px)
+    line-height @height
+    text-align center
+    margin 0.7rem 0
+    a
+      display block
+    &:nth-child(3n-1)
+      margin 0.7rem
+    &.active
+      background #D5D8DF
+      color #fff
+
+
+header
+  a
+    font-size 12px
+    color $Dialog_btn_cl
+  a.icon_address
+    padding-left: 23px
+    padding-right: 5px
+    background-size 20px auto
+    F_ellipsis(3.7rem)
+    font-size 15px
+  .title
+    display block
+
+#type
+  display none
+
+form
+  font-size 15px
+  .all
+    position relative
+    padding-left 0.75rem
+  .input_group
+    padding 0 0.75rem 0 0.3rem
+    .dot
+      background url("/assets/image/icon__yuandian@2x.png") center no-repeat
+      width 0.5rem
+      background-size 0.4rem
+      position absolute
+      height 100%
+      display -webkit-box
+      left -0.57rem
+
+  input[type="button"]
+    width 95%
+    margin auto
+    margin-top 20px
+    padding 10px
+    font-size 0.85rem
+  .red_line_out
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: 0.429999rem;
+    padding: 1.1rem 0
+  .red_line
+    background url("/assets/image/icon__shuxian@2x.png") repeat-y
+    width 100%
+    height 100%
+  input[type="text"]
+    text-align right
+
+
+
+.not_found
+  width: 4.875rem;
+  height: 1.375rem;
+  line-height @height
+  text-align center
+  border: 1px solid;
+  border-radius: 5px;
+  background: #F2F2F2
+  font-size 14px
+  position: fixed
+  bottom 1.75rem
+  right 0.75rem
+
+#search
+  border 1px solid $Input_bottom_line_cl
+  F_borderRadius(5px)
+  background #ffffff
+  position relative
+
+  input[type="text"]
+    background transparent
+    border none
+    outline none
+    height 1.75rem
+    text-align left
+    width 100%
+    padding 0 1.75rem 0 10px
+
+  input[type="button"]
+    background url("/assets/image/icon__sousuo@2x.png") no-repeat center
+    width 1.75rem
+    margin 0
+    padding 0
+    height 100%
+    background-size 1rem
+    -webkit-appearance none
+    position absolute
+    right 0
+    border none
+
+#suggest_page
+  .mr
+    height 0.75rem
+
+  form
+    font-size 15px
+    display none
+    padding 0.75rem
+    textarea
+      F_borderRadius(5px)
+      resize none
+      width 100%
+      height 7rem
+      padding .4rem
+      border 1px solid #C8C8C8
+    input[type="submit"]
+      width 100%
+      margin-top 20px
+
+
+form .sub_btn
+  padding 0 0.75rem
+

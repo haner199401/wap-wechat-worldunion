@@ -1,0 +1,61 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 我要贷款
+        link(rel="stylesheet" ,href="/assets/styles/other-house/apply_loan_all.min.css")
+    body
+        #apply_loan_all_page.app
+            header
+                a.icon.icon_back(href="javascript:history.go(-1);")
+                h1.title
+            .mr
+            section.container
+                form#apply_loan_all
+                    input(type="hidden",name="oldPrice")
+                    input(type="hidden",name="firstPrice")
+                    input(type="hidden",name="personalId")
+                    input(type="hidden",name="ownerType",value="1")
+                    input(type="hidden",name="housePrice")
+                    .input_group
+                        label 预计成交金额
+                        input(type="text",name="other",readonly="readonly",value="0")
+                        span.tag W
+
+                    .input_group
+                        label 预计首付金额
+                        input(type="text", data-rule="number" ,name="h_firstPrice",maxlength="6")
+                        span.tag W
+
+                    .input_group
+                        label 物业类型
+                        label.radio
+                            input(type="radio",name="estateType",value="1",checked="checked")
+                            span 普通住宅
+                        label.radio
+                            input(type="radio",name="estateType",value="0")
+                            span 非普通住宅
+
+                    .input_group.checkbox#type
+                        label 产权满两年
+                        input#propertyTwoYears(type="hidden",name="isTwoYear" value="0")
+                        i(for="propertyTwoYears" ,data-checked="1" ,data-nochecked="0")
+                    .input_group.checkbox#type
+                        label 业主唯一房产
+                        input#propertyUnique(type="hidden",name="isOneHous" value="0")
+                        i(for="propertyUnique" ,data-checked="1" ,data-nochecked="0")
+                    .input_group.checkbox#type
+                        label 业主首次购房
+                        input#propertyFirst(type="hidden",name="isFirst" value="0")
+                        i(for="propertyFirst" ,data-checked="1" ,data-nochecked="0")
+                    .input_group
+                        label 原购买价格
+                        input(type="text",data-rule="number",name="h_oldPrice",maxlength="6")
+                        span.tag W
+
+                    .sub_btn
+                        input(type="submit",value="下一步")
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/other-house/apply_loan_all.js")
+

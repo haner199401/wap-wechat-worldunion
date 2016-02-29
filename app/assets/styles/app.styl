@@ -1,0 +1,119 @@
+@import './common/common'
+
+/**
+ * 首页
+ */
+#index_page
+  & header
+      border-bottom none
+      background: rgba(255, 255, 255, 0.5);
+      position: absolute;
+      width 100%
+      z-index 2
+  & .container
+      .my_asset
+        width 100%
+        height 13rem
+        background-image url("/assets/image/pic__zichan@2x.png")
+        background-size 100%
+        background-repeat no-repeat
+        position relative
+        & .info
+          position: absolute;
+          left: 7.5rem;
+          top: 5.4rem;
+          font-size 12px
+          & .tag
+            margin 10px 0
+          & .money
+            font-size 26px
+        & .red_btn
+          width: 6.325rem;
+          height: 1.7rem;
+          font-size 17px;
+      & .menu
+        margin 1rem auto
+        width 15rem
+        display -webkit-box
+        & a
+          display -webkit-box
+          width 4.75rem
+          height 11.25rem
+          img
+            width 4.75rem
+            height 11.25rem
+            margin: auto;
+            display: block
+          &:nth-child(2)
+            -webkit-box-flex 1
+  & .calc
+    width: 100%;
+    border-radius: 0;
+    height: 2.45rem;
+    font-size 18px;
+
+
+
+/**
+ * 登录
+ */
+#login_page
+  background $Global_bg
+  & .container
+      padding 0 0.75rem
+  & .t_c img
+      width: 9.375rem
+      margin-top: 4.75rem
+      margin-bottom: 1.375rem
+
+
+/**
+ * 吐槽
+ */
+#comment_page
+  & .mr
+      height 0.75rem
+  & form
+      font-size 15px
+      padding 0.75rem
+      .input_group
+        border-bottom 0
+      textarea
+        F_borderRadius(5px)
+        resize none
+        width 100%
+        height 7rem
+        padding .4rem
+        border 1px solid #C8C8C8
+      input[type="submit"]
+        width 100%
+        margin-top 20px
+
+/**
+ * 理财
+ */
+#manage_money
+  .container
+    img
+      height 8rem
+      background-clip content-box
+    ol
+      padding-left 0.75rem
+      li
+        border-bottom 1px solid $Input_bottom_line_cl
+        height 2.45rem
+        line-height @height
+        F_ellipsis(100%)
+        &:last-child
+          margin-bottom 8rem
+    a.download_btn
+      position fixed
+      bottom 0
+      left 0
+      right 0
+      color #fff
+      F_borderRadius(0)
+      padding 0.75rem
+      text-align center
+      &:active
+        color #fff

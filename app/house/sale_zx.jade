@@ -1,0 +1,12 @@
+doctype html
+html(lang="en")
+    head
+        title 装修
+    body
+        #choose_zx.page.out.app(data-onpagefirstinto="getPageData",data-title="装修")
+            header
+                a.icon.icon_back(href="#sale_page",data-rel="back")
+                h1.title 装修
+
+            section.container
+                ul.data_list#zx_list(data-t-for="zx",data-v-for="h_zx")

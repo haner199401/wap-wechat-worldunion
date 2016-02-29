@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 吐槽
+        link(rel="stylesheet" ,href="/assets/styles/app.min.css")
+    body
+        #comment_page.app
+            header
+                a.icon.icon_back(href="javascript:history.go(-1);")
+                h1.title
+            .mr
+            section.container
+                form#suggest.list
+                    .input_group
+                        label.radio
+                            input(type="radio",name="revaluType",value="H")
+                            span 价格偏高
+                        label.radio
+                            input(type="radio",name="revaluType",value="L",checked="true")
+                            span 价格偏低
+                    textarea.f_b(placeholder="我们需要您的宝贵意见，欢迎吐槽...",name="opinion")
+
+                    input.btn.red_btn(type="submit",value="提交")
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/house/comment.js")

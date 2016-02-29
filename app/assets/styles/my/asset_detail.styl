@@ -1,0 +1,160 @@
+@import '../common/common'
+
+body
+  background #ffffff
+
+.container
+  padding 0 0.75rem
+
+.mr
+  background $Global_bg
+  height 0.75rem
+
+header
+  a
+    font-size 15px
+    color $Dialog_btn_cl
+    right 0.75rem
+
+.plan_list > p
+  font-size: 16px;
+  padding: 0.75rem 0;
+  border-top: 1px solid $Input_bottom_line_cl
+.plan_list >ul
+  border 1px solid #C2C5CE
+  margin-bottom 1rem
+  & li
+    height 1.75rem
+    line-height @height
+    & p
+      -webkit-box-flex 1
+      flex 1
+      text-align center
+      display: inline-block;
+      width: 32%;
+  & li:nth-child(2n-1)
+    background #F3F3F5
+  & li:first-child
+    background #C1C5D0
+    color #fff
+    font-size 16px
+
+.detail_table
+  margin-bottom 0.75rem
+  font-size 16px
+  .t_tr
+    display flex
+    padding 0.3rem 0
+    & p
+      flex 1
+      text-align center
+
+//饼状图
+.pie
+  height 10rem
+  width 100%
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+text{
+  font-weight 100;
+}
+path.slice{
+  stroke-width:2px;
+}
+
+polyline{
+  stroke-width: 2px;
+  fill: none;
+}
+
+#finance_page
+  .container
+    .f_l
+      padding 0.4rem 0
+      F_ellipsis(100%)
+  .my_asset
+    display flex
+    border-bottom 1px solid $Input_bottom_line_cl
+    padding 0.7rem 0
+    &>div
+      flex 1
+      &:last-child
+        border-left 1px solid $Input_bottom_line_cl
+        padding-left 1rem
+      & p
+        &:nth-child(2)
+          color #D12E27
+          font-size 25px
+          &:after
+            content " 万"
+            font-size 18px
+            color #D12E27
+
+  #gauge_result
+    padding 0.3rem 0
+    .f_color_ce3128
+      font-size 30px
+      letter-spacing 3px
+      &:after
+        content "万"
+        font-size 18px
+        color #333
+
+  #personal_info
+    border-top 1px solid $Input_bottom_line_cl
+    padding-left 0.75rem
+    .input_group
+      padding-right 0.75rem
+
+  .btn_yzm
+    height 1.4rem
+    width 4.9rem
+    border 1px solid #343E62
+    color #343E62
+    margin 0.9rem auto
+    background: url('/assets/image/icon__jslixi@2x.png') right no-repeat;
+    background-size: 0.7rem 0.45rem;
+    background-position-x: 3.7rem;
+    padding-right: 0.5rem;
+
+  #submit_btn
+    width 100%
+    font-size 0.85rem
+    padding 10px
+    margin 0.4rem 0
+  #interest
+    display none
+
+  .xAxis_info
+    margin-bottom 0.75rem
+  .xAxis_info > div
+    display -webkit-box
+    margin 0.2rem 0
+    span
+      -webkit-box-flex 1
+      display: block;
+      text-align: center
+      position relative
+
+  .xAxis_info .labels span
+    &:after
+      position absolute
+      left 0
+      content ' '
+      border 7px solid #343E61
+    &:first-child:after
+      border 7px solid #D02F27
+    &:last-child:after
+      border 7px solid #890300
+
+  .xAxis_info .money_info span
+    color #343E61
+    &:after
+      content ' 万'
+    &:first-child
+      color #D02F27
+    &:last-child
+      color #890300

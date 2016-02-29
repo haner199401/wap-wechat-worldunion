@@ -1,0 +1,45 @@
+@import '../common/common'
+
+body
+  overflow hidden
+.mr
+  height 0.75rem
+
+input[type="file"]
+  height 100%
+  width 100%
+  z-index 99
+#personalInfo
+  .input_group
+    position relative
+    padding 0 0.75rem
+    width 100%
+    img
+      position relative
+      width 2rem
+      height 2rem
+      left 7.3rem
+      display block
+      top -0.1rem
+      border 0.15rem solid #B6BFBD
+      F_borderRadius(2rem)
+    label
+      position relative
+      left -0.7rem
+      top 0
+      width 30%
+      display block
+    span
+      position relative
+      display block
+      text-align right
+      right 0.2rem
+      line-height 20px
+      width 60%
+    .username
+      right -0.6rem
+    .useridentity
+      right -0.6rem
+
+    &:nth-child(1n+1)
+      margin 0 0 0.15rem 0.8rem

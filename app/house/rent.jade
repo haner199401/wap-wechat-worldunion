@@ -1,0 +1,83 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/mobilebone-meta
+        title 出租
+        link(rel="stylesheet" ,href="/assets/styles/swiper.min.css")
+        link(rel="stylesheet" ,href="/assets/styles/my/sale.min.css")
+    body
+        #rent_page.app.page.out
+            header
+                a.icon.icon_back
+                h1.title
+            section.container
+                form#sale
+        include ../com/scroll
+        include ../com/swipe
+        include ../com/mobilebone-footer
+        script(type="text/javascript",src="/assets/scripts/plugin/swiper.min.js")
+        script(type="text/javascript",src="/assets/scripts/base/iscroll.js")
+        script(type="text/javascript",src="/assets/scripts/house/rent.js")
+
+        script(type="text/html",id="wu-detail-tmpl").
+            <input type="hidden" name="type" value="1">
+            <input type="hidden" name="personalId" value="">
+            <input type="hidden" value="" name="cHouse">
+            <input type="hidden" value="" name="cHall">
+            <input type="hidden" value="" name="cToilet">
+            <div class="house_name clearfix">
+            <h1 class="fl"><!--[=projectName]--></h1>
+            <h1 class="fr"><!--[=buildName]--><!--[=roomCode]--></h1>
+            </div>
+            <ul class="upload_img_area upload_img clearfix">
+            <li>
+            <input type="file" name="photoFile" id="fileToUpload">
+            </li>
+            </ul>
+            <input name="houseImgs" type="hidden">
+            <div class="mr title tag">房源信息</div>
+            <div class="padding_left">
+            <a href="rent_zx.html" class="input_group">
+            <label>装修情况</label>
+            <input id="zx" type="text" value="<!--[=necessarySetValue]-->" readonly="true">
+            <input id="h_zx" type="hidden" name="decoration" value="<!--[=necessarySet]-->" ><i class="icon icon_next"></i>
+            </a>
+            <div class="input_group choose_hht">
+                <label>户型</label>
+                <input type="text" name="hht" readonly="readonly">
+                <span class="tag">室厅卫</span>
+            </div>
+            <div class="input_group">
+            <label>面积</label>
+            <input type="text" data-rule="number_" name="area" value="<!--[=area]-->" maxlength="7"><span class="tag">㎡</span>
+            </div>
+            <a href="rent_facility.html" class="input_group">
+            <label>配套设施</label>
+            <input id="rf" type="text" readonly="true">
+            <input id="h_rf" type="hidden" name="necessarySettings" ><i class="icon icon_next"></i>
+            </a>
+            </div>
+            <div class="mr title tag">期望月租</div>
+            <div class="padding_left">
+            <div class="input_group">
+            <label>租金</label>
+            <input type="text" name="entrustPrice" data-rule="number" maxlength="8" ><span class="tag">元/月</span>
+            </div>
+            <div class="input_group">
+            <label class="tag">备注</label>
+            <input style="padding-right:0;" maxlength="140" type="text" name="remark" placeholder="--">
+            </div>
+            <div class="sub_btn">
+            <input type="button" id="submit_btn" value="提交">
+            </div>
+            </div>
+
+        script(type="text/html",id="zx_list_tmpl").
+            <!--[for(i=0;i<list.length;i++){]-->
+            <li><a data-id="<!--[=list[i].code]-->"  href="#rent_page" data-rel="back"><!--[=list[i].value]--></a></li>
+            <!--[}]-->
+
+        script(type="text/html",id="rf_list_tmpl").
+            <!--[for(i=0;i<list.length;i++){]-->
+            <li><a data-id="<!--[=list[i].code]-->"  href="#rent_page" data-rel="back"><!--[=list[i].value]--></a></li>
+            <!--[}]-->

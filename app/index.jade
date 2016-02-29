@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+    head
+        include ./com/meta
+        title 首页
+        link(rel="stylesheet" ,href="/assets/styles/app.min.css")
+    body
+
+        #index_page.app
+            header
+                a.icon.icon_menu
+                h1.title
+                a.icon.icon_personal
+
+            //container
+            section.container
+                .my_asset
+                    .info
+                        button.btn.red_btn#my_asset 我的资产
+                        p.tag.f_s 我的净资产
+                        p
+                            span ￥
+                            span.money 0
+                            span 万
+
+                .menu.clearfix
+                    a#go_other_asset
+                        img(src="/assets/image/image_home_type1@2x.png")
+                    a(href="./manage_money.html")
+                        img(src="/assets/image/image_home_type2@2x.png")
+                    a(href="./loan/addHouse.html")
+                        img(src="/assets/image/image_home_type3@2x.png")
+
+            button(data-href="./other-house/addHouse.html?t=self").btn.red_btn.calc.just_href 我要估价
+
+
+        include ./com/footer
+        script(type="text/javascript",src="/assets/scripts/index.js")

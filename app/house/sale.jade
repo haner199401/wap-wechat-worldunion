@@ -1,0 +1,198 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/mobilebone-meta
+        title 出售
+        link(rel="stylesheet" ,href="/assets/styles/swiper.min.css")
+        link(rel="stylesheet" ,href="/assets/styles/my/sale.min.css")
+
+    body
+        #sale_page.app.page.out
+            header
+                a.icon.icon_back
+                h1.title
+
+            section.container
+
+                form#sale
+                    //input(type="hidden",name="type",value="2")
+                    //
+                    //.house_name.clearfix
+                    //    h1.fl 万科四季城
+                    //    h1.fr 方言
+                    //ul.upload_img.clearfix
+                    //
+                    //    li
+                    //        input(type="file",name="photoFile",id="fileToUpload")
+                    //
+                    //input(name="houseImgs",type="hidden")
+                    //.mr.title.tag 房源信息
+                    //
+                    //.padding_left
+                    //
+                    //    a.input_group(href="sale_zx.html")
+                    //        label 装修情况
+                    //        input#zx(type="text",readonly="true")
+                    //        input#h_zx(type="hidden",name="decoration")
+                    //        i.icon.icon_next
+                    //
+                    //    .input_group
+                    //        label 户型
+                    //
+                    //        .select
+                    //            input#house_type(type="text",readonly="true")
+                    //            input#h_house_type(type="hidden",name="cHouse")
+                    //            - var n = 5
+                    //            select(data-v-for="h_house_type",data-t-for="house_type")
+                    //                while n > 0
+                    //                    option= n--
+                    //
+                    //        span.tag 室
+                    //
+                    //        .select
+                    //            input#cHall(type="text",readonly="true")
+                    //            input#h_cHall(type="hidden",name="cHall")
+                    //            - var n = 5
+                    //            select(data-v-for="h_cHall",data-t-for="cHall")
+                    //                while n > 0
+                    //                    option= n--
+                    //        span.tag 厅
+                    //
+                    //        .select
+                    //            input#cToilet(type="text",readonly="true")
+                    //            input#h_cToilet(type="hidden",name="cToilet")
+                    //            - var n = 5
+                    //            select(data-v-for="h_cToilet",data-t-for="cToilet")
+                    //                while n > 0
+                    //                    option= n--
+                    //        span.tag 卫
+                    //
+                    //
+                    //    .input_group
+                    //        label 面积
+                    //        input(type="text",name="area")
+                    //        span.tag ㎡
+                    //
+                    //.mr.title.tag 特色
+                    //
+                    //.padding_left
+                    //
+                    //    .input_group.checkbox
+                    //        label 产权满两年
+                    //        input#check_o(type="hidden",name="h_feature",value="2")
+                    //        i(for="check_o" ,data-checked="1" ,data-nochecked="2")
+                    //    .input_group.checkbox
+                    //        label 业主唯一房产
+                    //        input#check_union(type="hidden",name="h_feature",value="2")
+                    //        i(for="check_union" ,data-checked="1" ,data-nochecked="2")
+                    //    .input_group.checkbox
+                    //        label 学区房
+                    //        input#check_school(type="hidden",name="h_feature",value="2")
+                    //        i(for="check_school" ,data-checked="1" ,data-nochecked="2")
+                    //    .input_group.checkbox
+                    //        label 地铁房
+                    //        input#check_sub(type="hidden",name="h_feature",value="2")
+                    //        i(for="check_sub" ,data-checked="1" ,data-nochecked="2")
+                    //
+                    //    input(type="hidden",name="feature",value="1,1,1,1")
+                    //
+                    //.mr.title.tag 期望售价
+                    //.padding_left
+                    //    .input_group
+                    //        label 售价
+                    //        input(type="text",name="entrustPrice")
+                    //        span.tag 万
+                    //    .input_group
+                    //        label.tag 备注
+                    //        input(type="text",name="remark",placeholder="--")
+                    //
+                    //    .sub_btn
+                    //        input(type="submit",value="提交")
+        include ../com/scroll
+        include ../com/swipe
+        include ../com/mobilebone-footer
+        script(type="text/javascript",src="/assets/scripts/plugin/swiper.min.js")
+        script(type="text/javascript",src="/assets/scripts/base/iscroll.js")
+        script(type="text/javascript",src="/assets/scripts/house/sale.js")
+
+        script(type="text/html",id="wu-detail-tmpl").
+            <input type="hidden" name="type" value="2">
+            <input type="hidden" name="personalId" >
+            <input type="hidden" name="taxesTotal" value="<!--[=taxesTotal]-->" />
+            <input type="hidden" name="feature" value="">
+            <input type="hidden" name="entrustPrice" value="">
+            <input type="hidden" value="" name="cHouse">
+            <input type="hidden" value="" name="cHall">
+            <input type="hidden" value="" name="cToilet">
+
+            <div class="house_name clearfix">
+            <h1 class="fl"><!--[=projectName]--></h1>
+            <h1 class="fr"><!--[=buildName]--><!--[=roomCode]--></h1>
+            </div>
+            <ul class="upload_img upload_img_area clearfix">
+            <li>
+            <input type="file" name="photoFile" id="fileToUpload">
+            </li>
+            </ul>
+            <input name="houseImgs" type="hidden">
+            <div class="mr title tag">房源信息</div>
+            <div class="padding_left"><a href="sale_zx.html" class="input_group">
+            <label>装修情况</label>
+            <input id="zx" type="text" value="<!--[=necessarySetValue]-->" readonly="true">
+            <input id="h_zx" type="hidden" name="decoration" value="<!--[=necessarySet]-->" ><i class="icon icon_next"></i></a>
+            <div class="input_group choose_hht">
+                <label>户型</label>
+                <input type="text" name="hht" readonly="readonly">
+                <span class="tag">室厅卫</span>
+            </div>
+            <div class="input_group">
+            <label>面积</label>
+            <input type="text" data-rule="number_" name="area" maxlength="7" value="<!--[=area]-->"><span class="tag">㎡</span>
+            </div>
+            </div>
+            <div class="mr title tag">特色</div>
+            <div class="padding_left" id="rf_list">
+            <div class="input_group checkbox">
+            <label>产权满两年</label>
+            <input id="check_o" type="hidden" name="h_feature" value="2"><i for="check_o" data-checked="1" data-nochecked="2"></i>
+            </div>
+            <div class="input_group checkbox">
+            <label>业主唯一房产</label>
+            <input id="check_union" type="hidden" name="h_feature" value="2"><i for="check_union" data-checked="1" data-nochecked="2"></i>
+            </div>
+            <div class="input_group checkbox">
+            <label>学区房</label>
+            <input id="check_school" type="hidden" name="h_feature" value="2"><i for="check_school" data-checked="1" data-nochecked="2"></i>
+            </div>
+            <div class="input_group checkbox">
+            <label>地铁房</label>
+            <input id="check_sub" type="hidden" name="h_feature" value="2"><i for="check_sub" data-checked="1" data-nochecked="2"></i>
+            </div>
+            </div>
+            <div class="mr title tag">期望售价</div>
+            <div class="padding_left">
+            <div class="input_group">
+            <label>售价</label>
+            <input type="text" data-rule="number" maxlength="5" name="h_entrustPrice"><span class="tag">万</span>
+            </div>
+            <div class="input_group">
+            <label class="tag">备注</label>
+            <input style="padding-right:0;" type="text" maxlength="140" name="remark" placeholder="--">
+            </div>
+            <div class="sub_btn">
+            <input type="button" id="submit_btn" value="提交">
+            </div>
+            </div>
+
+        script(type="text/html",id="zx_list_tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li><a data-id="<!--[=list[i].code]-->"  href="#sale_page" data-rel="back"><!--[=list[i].value]--></a></li>
+            | <!--[}]-->
+
+        script(type="text/html",id="rf_list_tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <div class="input_group checkbox">
+            | <label><!--[=list[i].value]--></label>
+            | <i data-val="<!--[=list[i].code]-->"></i>
+            | </div>
+            | <!--[}]-->

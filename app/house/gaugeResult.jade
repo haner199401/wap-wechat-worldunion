@@ -1,0 +1,104 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 评估结果
+        link(rel="stylesheet" ,href="/assets/styles/my/result.min.css")
+    body
+        header
+            a.icon.icon_back(href="/house/myHouse.html")
+            h1.title
+            a.del_btn 删除
+        input(type="hidden",name="hasLoan")
+        section.container#wu-detail
+            //.slider
+            //    .house_info
+            //      p.t_c.f_x
+            //      p.t_c
+            //      p.t_c
+            //.list
+            //    .item
+            //        p
+            //            span.tag 房屋总价：
+            //            span.f_x 0
+            //            span &nbsp;万
+            //
+            //        button#comment
+            //            i.icon.icon_tucao 吐槽
+            //
+            //    .item.noborder
+            //        p
+            //            span.tag 房屋单价：
+            //            span.f_x 0
+            //            span &nbsp;万
+            //
+            //        span
+            //
+            //    .item
+            //        p
+            //            span.tag 小区均价：
+            //            span.f_x 0
+            //            span &nbsp;万
+            //
+            //    .item
+            //        p
+            //            span.tag 净资产暂时无法评估
+            //
+            //        button.btn.red_btn 录入按揭信息
+            //
+            //    .item.noborder
+            //        p
+            //            span.tag 历史价格走势图：
+            //
+            //    .item.noborder#line
+            //        svg(id="lineChartSVG")
+            //            defs
+            //                linearGradient(id="lineChart--gradientBackgroundArea",x1="0",x2="0",y1="0",y2="1")
+            //                    stop(class="lineChart--gradientBackgroundArea--top",offset="0%")
+            //                    stop(class="lineChart--gradientBackgroundArea--bottom",offset="100%")
+            //
+            //.btn.red_btn.btns
+            //    a 再融资
+            //    a 出租
+            //    a 出售
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/base/d3.v3.min.js")
+        script(type="text/javascript",src="/assets/scripts/house/gauge_result.js")
+        script(type="text/html",id="wu-detail-tmpl").
+            <div class="slider">
+            <div class="house_info">
+            <p class="t_c f_x"><!--[=projectName || '']--></p>
+            <p class="t_c"><!--[=buildName || '']--> <!--[=roomCode || '']--></p>
+            <p class="t_c"><!--[=assessment.area || 0]-->㎡</p>
+            </div>
+            </div>
+            <div class="list">
+            <div class="item">
+            <p><span class="tag">房屋总价：</span><span class="f_x"><!--[=$formatMoney(assessment.assetTotalPrice) || 0]--></span><span>&nbsp;万</span></p>
+            <button id="comment" data-caseId="<!--[=id || assessment.caseId]-->"><i class="icon icon_tucao">吐槽</i></button>
+            </div>
+            <div class="item noborder">
+            <p class="f_nor"><span class="tag">房屋单价：</span><span class="f_x"><!--[=$formatMoney(assessment.assetPrice,'true') || 0]--></span><span>&nbsp;元/㎡</span></p>
+            <!--[if($calcYoy(assessment.avgPrice,assessment.yoy) < 0){]--> <span class="down">同比 <!--[=$absCalcYoy(assessment.avgPrice,assessment.yoy)]--> %</span> <!--[}else{]-->
+            <span class="up">同比 <!--[=$absCalcYoy(assessment.avgPrice,assessment.yoy)]--> %</span>
+            <!--[}]-->
+            </div>
+            <div class="item">
+            <p class="f_nor"><span class="tag">小区均价：</span><span class="f_x"><!--[=$formatMoney(assessment.avgPrice,'true') || 0]--></span><span>&nbsp;元/㎡</span></p>
+            </div>
+            <div class="item">
+            <p><!--[if(assetTotal){]--><span class="tag">净资产： </span><span class="f_x"><!--[=$formatMoney(assetTotal) || 0]--></span> &nbsp;万<!--[}else{]--><span class="tag">净资产暂时无法评估</span><!--[}]--></p>
+            <!--[if(yetPrincipal){]-->
+            <button class="btn red_btn go_detail">明细</button>
+            <!--[}else{]-->
+            <button class="btn red_btn go_anjie">录入按揭信息</button>
+            <!--[}]-->
+            </div>
+            <div class="item noborder">
+            <p><span class="tag">历史价格走势图：</span></p>
+            </div>
+                <div id="line" class="item noborder"></div>
+            </div>
+            <div class="custom_height"></div>
+            <div class="btn red_btn btns"><a id="finace">再融资</a><a id="rent">出租</a><a id="sale">出售</a></div>

@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 配套设施
+        link(rel="stylesheet" ,href="/assets/styles/my/choose.min.css")
+    body
+
+        header
+            a.icon.icon_back(href="javascript:history.go(-1);")
+            h1.title
+
+        section.container
+            ul.data_list
+                li.active 毛坯
+                li 简装修
+                li 精装修
+                li 豪装修
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/house/choose.js")

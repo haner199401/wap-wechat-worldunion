@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 我的资产
+        link(rel="stylesheet" ,href="/assets/styles/my/myhouse.min.css")
+    body.app.auth_page.refresh_page
+
+        header
+            a.icon.icon_back(href="/index.html")
+            h1.title
+            a.icon.icon_addasset(href="/house/addHouse.html")
+        .mr
+        section.container
+
+            .my_asset
+                div
+                    p.tag 资产总价：
+                    p#asset_total 0
+                div
+                    p.tag 净资产总价：
+                    p#net_asset_total 0
+
+            ul.house#wu-list
+
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/house/my_house.js")
+        script(type="text/html",id="wu-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li class="clearfix" data-id="<!--[=list[i].id]-->">
+            | <p class="house_title"><!--[=list[i].projectName]-->-<span class="f_b"><!--[=list[i].buildName]--><!--[=list[i].roomCode]--></span></p>
+            | <div class="house_price">
+            | <p><span class="tag">估值：</span><span><span class="assetTotalPrice"><!--[=$formatMoney(list[i].assessment.assetTotalPrice) || 0]--> </span>万</span></p>
+            | <p><span class="tag">净值：</span><span><!--[=$formatMoney(list[i].assetTotal) || 0 ]--> 万</span></p>
+            | </div>
+            | </li>
+            | <!--[}]-->

@@ -1,0 +1,46 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 提前还款记录
+        link(rel="stylesheet" ,href="/assets/styles/my/record.min.css")
+    body
+        header
+            a.icon.icon_back
+            h1.title
+            a#go_add 再添加
+        .mr
+        section.container#wu-list
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/house/getrecord.js")
+        script(type="text/html",id="wu-list-tmpl").
+            <!--[for(i=0;i<list.length;i++){]-->
+            <div class="record_form">
+            <div class="t_header clearfix">
+            <div class="fl title">还款记录<!--[=(i+1)]--></div>
+            <div class="fr" data-id="<!--[=list[i].id]-->" >
+            <button class="icon_btn del_btn">删除</button>
+            <button class="icon_btn edit_btn">编辑</button>
+            </div>
+            </div>
+            <div class="t_body">
+            <p>
+            <label class="tag">还款金额：</label>
+            <label><!--[=$formatMoney(list[i].refundPrice)]-->万</label>
+            </p>
+            <p>
+            <label class="tag">还款时间：</label>
+            <label><!--[=$formatDate(list[i].refundDate,5)]--></label>
+            </p>
+            <p>
+            <label class="tag">处理方式：</label>
+            <!--[if(list[i].refundType === 'Y'){]-->
+            <label>金额不变缩短年限</label>
+            <!--[}else{]-->
+            <label>年限不变减少金额</label>
+            <!--[}]-->
+            </p>
+            </div>
+            </div>
+            <!--[}]-->

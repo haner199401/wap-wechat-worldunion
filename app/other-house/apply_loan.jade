@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+   head
+      include ../com/meta
+      title 我要贷款
+      link(rel="stylesheet" ,href="/assets/styles/other-house/apply_loan.min.css")
+   body
+      #apply_loan_page.app
+         header
+            a.icon.icon_back(href="javascript:history.go(-1);")
+            h1.title
+         .mr
+         section.container
+            form#apply_loan
+      include ../com/footer
+      script(type="text/javascript",src="/assets/scripts/other-house/apply_loan.js")
+      script(type="text/html",id="wu-detail-tmpl").
+          <input type="hidden" name="firstPrice" value="">
+          <div class="input_group">
+          <label>预计成交金额</label>
+          <input type="text" value="<!--[=$formatMoney(assessment.assetTotalPrice) || 0]-->" readonly="readonly"><span class="tag">W</span>
+          </div>
+          <div class="input_group">
+          <label>预计首付金额</label>
+          <input type="text" data-rule="number" name="h_firstPrice" maxlength="6"><span class="tag">W</span>
+          </div>
+          <div class="input_group">
+          <label>税费</label>
+          <input type="text" value="<!--[=$calcMoney(taxesTotal,1)]-->" readonly="readonly"><span class="tag">W</span>
+          </div>
+          <div class="t_r"><a id="go_property_record" class="btn_yzm">查看产权信息</a></div>
+          <div class="sub_btn">
+            <input id="submit_btn" type="button" value="下一步">
+          </div>
+

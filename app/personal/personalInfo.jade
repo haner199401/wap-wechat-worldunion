@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+    head
+        title 基本资料
+        include ../com/meta
+        link(rel="stylesheet" ,href="/assets/styles/personal/personalInfo.min.css")
+    body#personalInfo_page.app.auth_page.refresh_page
+        header
+            a.icon.icon_back(href="personalCenter.html")
+            h1.title
+        .mr
+        section.container
+            form#personalInfo(method="post")
+                input(type="hidden", name="id")
+                a#updPhoto.input_group(href="#")
+                    input(type="file", name="photoFile" id="photoFile")
+                    label.labeltx 头像
+                    .rightitem
+                        img#imgPhoto(src="/assets/image/pic__zichan@2x.png")
+                .input_group
+                    label 姓名
+                    span.username -
+                .input_group
+                    label 身份证
+                    span.useridentity
+                a.input_group(href="personalInfoTel.html")
+                    label 手机号
+                    span.usertel -
+                    i.icon.icon_next
+                a.input_group(href="personalInfoCity.html")
+                    label 所属城市
+                    span.useraddress -
+                    i.icon.icon_next
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/personal/personalInfo.js")

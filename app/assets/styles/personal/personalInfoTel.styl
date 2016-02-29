@@ -1,0 +1,20 @@
+@import '../common/common'
+
+#personalInfoTel
+   > input[type="text"],input[type="number"],input[type="tel"]
+     width 100%
+     display block
+     border 1px solid $Input_bottom_line_cl
+     F_borderRadius(5px)
+     padding 0.5rem
+     margin 1.125rem 0
+   > .h_input_group,.h_input_group *
+     display -webkit-box
+   > .h_input_group input[type="text"],.h_input_group input[type="number"],.h_input_group input[type="tel"]
+     border 1px solid $Input_bottom_line_cl
+     F_borderRadius(5px)
+     padding 0.5rem
+     -webkit-box-flex 1
+   > .h_input_group #sendcode
+     padding 0.3rem
+     margin-left 0.825rem

@@ -1,0 +1,32 @@
+@import '../my/asset_detail'
+
+.container
+  padding 0
+
+.plan_list >ul
+  border none
+  margin-bottom 5rem
+  li >p
+    word-spacing: normal
+    text-overflow: ellipsis
+    overflow: hidden
+    word-break: break-all
+    word-wrap: break-word
+    white-space: nowrap
+
+.taxes_info
+  position fixed
+  bottom 0
+  left 0
+  right 0
+  display -webkit-box
+  padding: 0.75rem;
+  line-height: 25px
+  background #fff
+  > div
+    -webkit-box-flex 1
+    flex 1
+    padding 0 0.75rem
+    &:first-child
+      border-right 1px solid $Input_bottom_line_cl
+      margin-right 10px

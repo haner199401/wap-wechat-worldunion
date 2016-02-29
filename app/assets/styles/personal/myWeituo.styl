@@ -1,0 +1,65 @@
+@import '../common/common'
+
+#myWeituo_page
+ & header
+   border-bottom none
+   background: rgba(255, 255, 255, 1);
+   width 100%
+ & .container
+   background-color #EFEFEF
+   padding-top 0.8rem
+   .data_show
+     background-color #fff
+     box-shadow: 0 0 5px 1px #D4D4D4
+     margin 0 0.8rem 0.8rem 0.8rem
+     border 0.05rem solid #D4D4D4
+     .data_header
+       display: -webkit-box;
+       display flex
+       align-items: center;
+       padding: 0.35rem;
+     img
+       width 1.3rem
+       height 1.3rem
+       margin-right 10px
+     .info
+       font-size 17px
+       -webkit-box-flex 1
+       display block
+       flex 1
+       F_ellipsis(100%)
+     *[data-type="title1"]
+       display none
+     *[data-type="title2"]
+       display none
+     *[data-type="title-1"]
+       display none
+     *[data-type="title-2"]
+       display none
+
+     .infostatus
+       color #d02f28
+     .infosplit
+       width 100%
+       height 1px
+       background-color #D4D4D4
+     .data_detail
+       position relative
+       left 0
+       label
+         color #848a9e
+       span
+         position relative
+         left 0.5rem
+         color #2f323b
+       .data_li
+         position relative
+         margin 0.5rem
+         left 0.2rem
+         .czfc
+           F_ellipsis(65%)
+           display inline-block
+       .padding_left
+         position absolute
+         left 12.1rem
+         top 0.5rem

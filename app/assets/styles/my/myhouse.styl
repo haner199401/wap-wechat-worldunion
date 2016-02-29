@@ -1,0 +1,50 @@
+@import '../common/common'
+
+body
+  background #FFFFFF
+
+.mr
+  background $Global_bg
+  height 0.75rem
+
+header
+  a
+    font-size 12px
+    color $Dialog_btn_cl
+
+.my_asset
+  display flex
+  border-bottom 1px solid $Input_bottom_line_cl
+  padding 0 0.7rem
+  &>div
+    flex 1
+    & p
+      margin 10px 0
+      &:nth-child(2)
+        color #D12E27
+        font-size 28px
+        &:after
+          content " 万"
+          font-size 18px
+          color #333
+.house
+  padding 0 0.75rem
+  & li
+    border-bottom 1px solid $Input_bottom_line_cl
+    padding 10px 0
+  & .house_title
+    font-size: 18px;
+    margin: .3rem 0;
+    background: url("/assets/image/icon__fangchan@2x.png") no-repeat left center;
+    background-size: auto 100%;
+    padding-left: 30px;
+    F_ellipsis(100%)
+  & .house_price
+    & p
+      width 50%
+      float left
+      & span:nth-child(2)
+        color #D12E27
+        font-size: 16px
+      &:last-child
+        padding-left 1.5rem

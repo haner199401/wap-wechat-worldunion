@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+    head
+        include ./com/meta
+        title 我要理财
+        link(rel="stylesheet" ,href="assets/styles/app.min.css")
+    body
+        #manage_money.app
+            header
+                a.icon.icon_back(href="javascript:history.go(-1);")
+                h1.title
+                a.icon.icon_personal
+            .container
+                img(src="/assets/image/pic_licai@2x.png")
+                ol
+                    li 产品亮点：%9.5收益,3-12个月，1元起投!
+                    li 资金安全：本金保障,资金第三方托管!
+                    li 风控严密：银行级风控流程,十年房地产信贷经验!
+                    li 标的优质：银行理财标的,直接对银行征信!
+                    li 免手续费：平台杜绝隐形收费,提供优质服务!
+                a.btn.red_btn.download_btn.f_l(href="http://wx.fanglb.com/weixin-web/page/app/download-jj.html",target="_blank") 下载集金，抢收益！
+        include ./com/footer

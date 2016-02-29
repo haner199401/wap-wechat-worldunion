@@ -1,0 +1,87 @@
+doctype html
+html(lang="en")
+    head
+        title 添加房产
+        include ../com/mobilebone-meta
+        link(rel="stylesheet" ,href="/assets/styles/my/addhouse.min.css")
+    body
+        section#add_house.page.out.app.closeable_from
+            header
+                a.icon.icon_back(data-ajax="false")
+                h1.title
+                a.icon.icon_address(href="locationCity.html")
+
+            .mr
+            section.container
+                form#addhouse(method="post")
+                    input(type="hidden",name="cityId")
+                    .all
+                        .red_line_out
+                            .red_line
+                        .input_area
+                            a.input_group(href="choose_xq.html" data-reload="true")
+                                i.dot
+                                label 请选择楼盘
+                                input#xq(type="text",name="projectName",readonly="true" )
+                                input#h_xq(type="hidden",name="projectId")
+                                i.icon.icon_next
+
+                            a.input_group(href="choose_ld.html" data-reload="true")
+                                i.dot
+                                label 请选择楼栋
+                                input#ld(type="text",name="buildName",readonly="true")
+                                input#h_ld(type="hidden",name="buildId")
+                                i.icon.icon_next
+
+                            a.input_group(href="choose_fh.html" data-reload="true")
+                                i.dot
+                                label 请选择房号
+                                input#fh(type="text",name="roomCode",readonly="true")
+                                input#h_fh(type="hidden",name="roomId")
+                                i.icon.icon_next
+
+                            a.input_group
+                                i.dot
+                                label 请输入面积
+                                input#mj(type="text",data-rule="number_",name="area",maxlength="7")
+                                label.tag ㎡
+
+                            a.input_group.chooseitem(href="choose_zx.html" data-reload="true")
+                                i.dot
+                                label 请选择装修情况
+                                input#zx(type="text",readonly="true")
+                                input#h_zx(type="hidden",name="necessarySet")
+                                i.icon.icon_next
+
+                            .input_group.checkbox#type
+                                span.dot
+                                label 是否自有房
+                                input#has_house(type="hidden",name="type" value="2")
+                                i(for="has_house" ,data-checked="1" ,data-nochecked="2")
+                    .sub_btn
+                        input#submit_btn.btn.red_btn(type="button",value="确认")
+
+
+        include ../com/mobilebone-footer
+        script(type="text/javascript",src="http://api.map.baidu.com/api?v=2.0&ak=pBYPU9rfQCTflKcU2jSF9iuy")
+        script(type="text/javascript",src="/assets/scripts/other-house/add_other_house.js")
+        script(type="text/html",id="city-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li><a data-id="<!--[=list[i].id]-->" href="#add_house" data-rel="back" ><!--[=list[i].cityName]--></a></li>
+            | <!--[}]-->
+        script(type="text/html",id="project_list_tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li><a data-id="<!--[=list[i].id]-->"  href="choose_ld.html" data-reload="true"><!--[=list[i].projectName]--></a></li>
+            | <!--[}]-->
+        script(type="text/html",id="build_list_tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li><a data-id="<!--[=list[i].id]-->"  href="choose_fh.html" data-reload="true"><!--[=list[i].buildName]--></a></li>
+            | <!--[}]-->
+        script(type="text/html",id="room_list_tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li><a data-id="<!--[=list[i].id]-->" data-area="<!--[=$number2Fixed2(list[i].area)]-->"  href="#add_house" data-rel="back"><!--[=list[i].roomCode]--></a></li>
+            | <!--[}]-->
+        script(type="text/html",id="zx_list_tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li><a data-id="<!--[=list[i].code]-->"  href="#add_house" data-rel="back"><!--[=list[i].value]--></a></li>
+            | <!--[}]-->

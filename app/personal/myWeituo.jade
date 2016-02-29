@@ -1,0 +1,53 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 我的委托
+        link(rel="stylesheet" ,href="/assets/styles/personal/myWeituo.min.css")
+    body
+        #myWeituo_page.app.auth_page.refresh_page
+            header
+                a.icon.icon_back(href="personalCenter.html")
+                h1.title
+
+            section.container
+                form#myWeituo
+                   ul.house#wu-list
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/personal/myWeituo.js")
+        script(type="text/html",id="wu-list-tmpl").
+            <!--[for(i=0;i<list.length;i++){]-->
+                <li>
+                <div class="data_show" data-id="<!--[=list[i].id]-->">
+                    <div class="data_header">
+                        <img src="/assets/image/icon__zf@2x.png" data-type="title<!--[=list[i].type-1]-->">
+                        <img src="/assets/image/icon__sf@2x.png" data-type="title<!--[=list[i].type-2]-->">
+                        <img src="/assets/image/icon__mf@2x.png" data-type="title<!--[=list[i].type-3]-->">
+                        <span class="info" data-id="<!--[=list[i].type]-->">
+                        <label data-type="title<!--[=list[i].type-1]-->"><!--[=list[i].projectName]--></label>
+                        <label data-type="title<!--[=list[i].type-2]-->"><!--[=list[i].projectName]--></label>
+                        <label data-type="title<!--[=list[i].type-3]-->"><!--[=list[i].projectName]--></label></span>
+                        <span class="infostatus"><!--[=list[i].statusMeaning]--></span>
+                    </div>
+                <div class="infosplit"></div>
+                <div class="data_detail">
+                <div class="data_li">
+                <label data-type="title<!--[=list[i].type-1]-->">出租房产:</label>
+                <label data-type="title<!--[=list[i].type-2]-->">出售房产:</label>
+                <label data-type="title<!--[=list[i].type-3]-->">购买房产:</label>
+                <span class="czfc"><!--[=list[i].buildName || '']-->-<!--[=list[i].roomCode || '']--></span></div>
+                <div class="data_li">
+                <label data-type="title<!--[=list[i].type-1]-->">出租金额:</label>
+                <label data-type="title<!--[=list[i].type-2]-->">出售金额:</label>
+                <label data-type="title<!--[=list[i].type-3]-->">购买金额:</label>
+                    <!--[if(list[i].type == '1'){]-->
+                    <span class="czje"><!--[=list[i].entrustPrice]--></span><span class="czjey">  元 / 月</span>
+                    <!--[}else{]-->
+                <span class="czje"><!--[=$formatMoney(list[i].entrustPrice) || 0]--></span><span class="czjey">万</span>
+                    <!--[}]-->
+                </div>
+                <div class="data_li"><label>委托时间:</label><span class="wtsj"> <!--[=$formatDate(list[i].applyDate,6)]--></span></div>
+                <div class="padding_left"><a class="input_group"><i class="icon icon_next"></i></a></div></div></div>
+                </li>
+            <!--[}]-->

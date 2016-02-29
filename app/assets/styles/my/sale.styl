@@ -1,0 +1,128 @@
+@import '../common/common'
+
+body
+  background #FFFFFF
+html, body, .app{
+  height auto;
+}
+.mr
+  background $Global_bg
+  &.title
+    padding .35rem 0.75rem
+    font-size 13px
+
+#sale
+  & .house_name
+    padding 0.5rem 0.75rem
+    & h1
+      font-size 14px
+    & h1:first-child
+      font-size 18px
+  & .upload_img_area
+    padding 0 0.75rem
+    li
+      float left
+      width 4.45rem
+      height @width
+      margin-bottom 0.55rem
+      & img
+        width 100%
+        height 100%
+      &:nth-child(3n-1)
+        margin 0 0.55rem
+
+    &.upload_img li:last-child
+      position relative
+      background url("/assets/image/add_img@2x.png") no-repeat center
+      background-size 1.3rem
+      border 1px solid $Input_bottom_line_cl
+      overflow hidden
+
+    input[type="file"]
+      width 4.45rem
+      height @width
+
+  & .input_group,.sub_btn
+    padding-right 0.75rem
+
+  & .sub_btn
+    margin-top 1.45rem
+
+#choose_zx .title
+  display block
+
+.box{
+  display none;
+}
+.box,.box-layer{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+}
+.box-layer{background: #000;opacity: .7;filter: Alpha(Opacity=70);}
+.time-con{ position: fixed;bottom: 0;left: 0;right: 0;z-index: 1002;}
+.time-title{ text-align:center; background:#390; color:#fff; font-weight:normal; line-height:30px;}
+.time-box{height:120px; position:relative; background:#f5f5f5; overflow:hidden;border-radius: 5px;border-bottom-left-radius: 0;border-bottom-right-radius: 0;}
+.time-choose{width: 100%;height: 30px;position: absolute;top: 46px;z-index: 2;box-shadow: 0 1px 10px -2px rgba(8, 8, 8, 0.32);}
+.time-year{ line-height:40px; font-size:14px;width:33%; height:120px; overflow:hidden; text-align:center; z-index:3; position:absolute;}
+.time-year li{ height:40px;}
+.time-month{ line-height:40px; font-size:14px;width:33%; height:120px; overflow:hidden; text-align:center; z-index:3; left:33%; position:absolute;}
+.time-month li{ height:40px;}
+.time-day{ line-height:40px; font-size:14px;width:33%; height:120px; overflow:hidden; text-align:center; z-index:3; left:66%; position:absolute;}
+.time-day li{ height:40px;}
+
+.time-btn{z-index: 10;}
+.time-btn >span{
+  float: left;
+  width: 50%;
+  display: block;
+  background: #f5f5f5;
+}
+.confirm-btn span,
+.cancel-btn span
+  display: block;
+  text-align: center;
+  height: 36px;
+  line-height: 36px;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  text-shadow: none;
+  border-top: 1px solid #dbdbdb;
+
+.confirm-btn span{
+  border-right: 1px solid #dbdbdb;
+}
+
+
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  position fixed
+  top 0;
+  left 0;
+  display: none;
+  z-index 100
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: rgba(0,0,0,0.3);
+}
+.swiper-slide img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}

@@ -1,0 +1,52 @@
+@import '../common/common'
+
+.container
+  padding 0 0.75rem
+
+header
+  a
+    font-size 15px
+    color $Dialog_btn_cl
+    right 0.75rem
+
+.record_form
+  box-shadow: 0 0 5px 1px #D4D4D4
+  background #ffffff
+  border 1px solid #D4D4D4
+  margin 0.75rem 0
+  & .t_header
+    border-bottom 1px solid #D4D4D4
+    padding 0.5rem 0.75rem
+    & .title
+      font-size 18px
+      line-height 1.3rem
+    & .del_btn,.edit_btn
+      background #fff
+      width 3.4rem
+      height 1.4rem
+      F_borderRadius(5px)
+      padding-left 1rem
+      font-size .6rem
+      &:after
+        content ""
+        display block
+        background-size 100%
+        width 0.75rem
+        F_center_v(0.875rem)
+        left 0.6rem
+    & .del_btn
+      color #343E61
+      border 1px solid @color
+      &:after
+        background url("/assets/image/icon_del@2x.png") no-repeat
+        background-size 100%
+    & .edit_btn
+      color #DA1F28
+      border 1px solid @color
+      &:after
+        background url("/assets/image/icon_edit@2x.png") no-repeat
+        background-size 100%
+  & .t_body
+    line-height 30px
+    padding 0.3rem 0.75rem
+

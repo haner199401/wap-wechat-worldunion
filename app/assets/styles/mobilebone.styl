@@ -1,0 +1,112 @@
+/*!
+ * mobilebone.css
+ * by zhangxinxu(.com) 2014-09-26
+ * some necessary CSS for mobilebone.js
+ * good luck for U, ^_^
+**/
+
+a, img {
+    -webkit-touch-callout: none;
+}
+body {
+	margin: 0;
+	-webkit-user-select: none;
+	user-select: none;
+	-ms-touch-action: none;
+}
+
+/* construction */
+html, body, .page {
+	height: 100%; width: 100%;
+	//overflow: hidden;
+    //overflow-y: scroll;
+}
+.page {
+	position: absolute; left: 0; top: 0;
+}
+
+.page.out {
+	display: none;
+}
+
+.in, .out {
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+/* mask layer when ajax sending... */
+.mask {
+	height: 100%; width: 100%;
+	//background-color: rgba(255,255,255,.35);
+    background-color: rgba(0,0,0,.35);
+	position: absolute; left: 0; top: 0;
+	z-index: 9;
+}
+.loading {
+    width: 50px;
+    height:16px;
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	margin: auto;
+    //background:url("/assets/image/ajax-loader.gif") no-repeat center;
+    background:url("/assets/image/ajax-loader2.gif?v=") no-repeat center;
+}
+
+.slide.out, .slide.in {
+	-webkit-animation-timing-function: ease-out;
+	-webkit-animation-duration: 225ms;
+	animation-timing-function: ease-out;
+	animation-duration: 225ms;
+}
+.slide.in {
+	-webkit-animation-name: slideinfromright;
+	animation-name: slideinfromright;
+}
+.slide.out {
+	-webkit-animation-name: slideouttoleft;
+	animation-name: slideouttoleft;
+}
+.slide.reverse.out {
+	-webkit-animation-name: slideouttoright;
+	animation-name: slideouttoright;
+}
+.slide.reverse.in {
+	-webkit-animation-name: slideinfromleft;
+	animation-name: slideinfromleft;
+}
+
+/* keyframes for slidein from sides */
+@-webkit-keyframes slideinfromright {
+    from { -webkit-transform: translate3d(100%,0,0); }
+    to { -webkit-transform: translate3d(0,0,0); }
+}
+@keyframes slideinfromright {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+@-webkit-keyframes slideinfromleft {
+    from { -webkit-transform: translate3d(-100%,0,0); }
+    to { -webkit-transform: translate3d(0,0,0); }
+}
+@keyframes slideinfromleft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+/* keyframes for slideout to sides */
+@-webkit-keyframes slideouttoleft {
+    from { -webkit-transform: translate3d(0,0,0); }
+    to { -webkit-transform: translate3d(-100%,0,0); }
+}
+@keyframes slideouttoleft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+@-webkit-keyframes slideouttoright {
+    from { -webkit-transform: translate3d(0,0,0); }
+    to { -webkit-transform: translate3d(100%,0,0); }
+}
+@keyframes slideouttoright {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+

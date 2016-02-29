@@ -1,0 +1,103 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 按揭信息录入
+        link(rel="stylesheet" ,href="/assets/styles/my/anjie.min.css")
+        link(rel="stylesheet" ,href="/assets/scripts/plugin/mobiscroll/mobiscroll-core.css")
+        link(rel="stylesheet" ,href="/assets/scripts/plugin/mobiscroll/mobiscroll-android.css")
+    body
+        #addAnJir_page.app
+            header
+                a.icon.icon_back
+                h1.title
+            .mr
+            section.container
+
+                form#anjie
+
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/plugin/mobiscroll/mobiscroll.js")
+        script(type="text/javascript",src="/assets/scripts/house/addanjie.js")
+        script(type="textx/html",id="wu-detail-tmpl").
+            <input type="hidden" name="personalId">
+            <input type="hidden" name="id">
+             <input type="hidden" name="loanPrice" value="<!--[=loanPrice]-->">
+             <input type="hidden" name="contractRatePre" value="<!--[=contractRatePre]-->">
+             <input type="hidden" name="hasRecord" value="" />
+             <div class="input_group">
+             <label>贷款金额</label>
+             <input type="text" maxlength="4" data-rule="number" name="h_loanPrice" value="<!--[=$formatMoney(loanPrice)]-->"><span class="tag">W</span>
+             </div>
+             <div class="input_group">
+             <label>贷款年限</label>
+             <input type="text" maxlength="2" data-rule="number" name="loanAgeLimit" value="<!--[=loanAgeLimit]-->"><span class="tag">年</span>
+             </div>
+             <div class="input_group">
+             <label>首次还款日期</label>
+             <div class="select">
+             <input type="text" id="datepicker" placeholder="年月日" name="firstRefundDate" value="<!--[=$formatDate(firstRefundDate,6)]-->" readonly="true">
+             </div>
+             </div>
+             <div class="input_group">
+             <label>合同利率标准</label>
+             <!--[if(contractRate){]-->
+             <label class="radio">
+             <input type="radio" name="contractRate" value="S" <!--[if(contractRate == 'S'){]-->checked="checked"<!--[}]--> ><span>上浮</span>
+             </label>
+             <label class="radio">
+             <input type="radio" name="contractRate" value="X" <!--[if(contractRate == 'X'){]-->checked="checked"<!--[}]--> ><span>下调</span>
+             </label>
+             <!--[}else{]-->
+             <label class="radio">
+             <input type="radio" name="contractRate" value="S" checked="checked" ><span>上浮</span>
+             </label>
+             <label class="radio">
+             <input type="radio" name="contractRate" value="X" ><span>下调</span>
+             </label>
+             <!--[}]-->
+             <input type="text" name="h_contractRatePre" data-rule="number" maxlength="3" value="<!--[=$formatPercent(contractRatePre)]-->" ><span class="tag">%</span>
+             </div>
+             <div class="input_group">
+             <label>货款类型</label>
+             <!--[if(loanType){]-->
+             <label class="radio">
+             <input type="radio" name="loanType" value="S" <!--[if(loanType == 'S'){]-->checked="checked"<!--[}]--> ><span>商业贷款</span>
+             </label>
+             <label class="radio">
+             <input type="radio" name="loanType" value="G" <!--[if(loanType == 'G'){]-->checked="checked"<!--[}]--> ><span>公积金贷款</span>
+             </label>
+             <!--[}else{]-->
+             <label class="radio">
+             <input type="radio" name="loanType" value="S" checked="checked"><span>商业贷款</span>
+             </label>
+             <label class="radio">
+             <input type="radio" name="loanType" value="G" ><span>公积金贷款</span>
+             </label>
+             <!--[}]-->
+             </div>
+             <div class="input_group">
+             <label>还款方式</label>
+             <!--[if(refundMode){]-->
+             <label class="radio">
+             <input type="radio" name="refundMode" value="X" <!--[if(refundMode == 'X'){]-->checked="checked"<!--[}]--> ><span>等额本息</span>
+             </label>
+             <label class="radio">
+             <input type="radio" name="refundMode" value="J" <!--[if(refundMode == 'J'){]-->checked="checked"<!--[}]--> ><span>等额本金</span>
+             </label>
+            <!--[}else{]-->
+             <label class="radio">
+             <input type="radio" name="refundMode" value="X" checked="checked" ><span>等额本息</span>
+             </label>
+             <label class="radio">
+             <input type="radio" name="refundMode" value="J"><span>等额本金</span>
+             </label>
+            <!--[}]-->
+             </div>
+             <div class="t_r">
+             <button id="go_return_money_record" class="btn_yzm" data-id="<!--[=id]-->">提前还款记录</button>
+             </div>
+             <div class="sub_btn">
+             <input type="submit" value="提交">
+             </div>

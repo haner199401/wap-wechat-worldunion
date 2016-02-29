@@ -1,0 +1,88 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 产权信息录入
+        link(rel="stylesheet" ,href="/assets/styles/other-house/apply_loan_all.min.css")
+    body
+        #apply_loan_all_page.app
+            header
+                a.icon.icon_back(href="javascript:history.go(-1);")
+                h1.title
+            .mr
+            section.container
+                form#apply_loan_all
+
+                    input(type="hidden",name="personalId")
+                    input(type="hidden",name="id")
+                    input(type="hidden",name="oldPrice")
+                    input(type="hidden",name="ownerType",value="1")
+                    input(type="hidden",name="housePrice")
+
+                    .input_group
+                        label 物业类型
+                        label.radio
+                            input(type="radio",name="estateType",value="1",checked="checked")
+                            span 普通住宅
+                        label.radio
+                            input(type="radio",name="estateType",value="0")
+                            span 非普通住宅
+                    .input_group.checkbox#type
+                        label 产权满两年
+                        input#propertyTwoYears(type="hidden",name="isTwoYear" value="0")
+                        i(for="propertyTwoYears" ,data-checked="1" ,data-nochecked="0")
+                    .input_group.checkbox#type
+                        label 业主唯一房产
+                        input#propertyUnique(type="hidden",name="isOneHous" value="0")
+                        i(for="propertyUnique" ,data-checked="1" ,data-nochecked="0" )
+                    .input_group.checkbox#type
+                        label 业主首次购房
+                        input#propertyFirst(type="hidden",name="isFirst" value="0")
+                        i(for="propertyFirst" ,data-checked="1" ,data-nochecked="0" )
+                    .input_group
+                        label 原购买价格
+                        input(type="text",data-rule="number_",name="h_oldPrice",maxlength="6")
+                        span.tag W
+                    .sub_btn
+                        input(type="submit",value="提交")
+
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/other-house/save_propretyinfo.js")
+        script(type="text/html",id="wu-detail-tmpl").
+            <input type="hidden" name="personalId">
+            <input type="hidden" name="id">
+            <input type="hidden" name="oldPrice">
+            <input type="hidden" name="ownerType" value="1">
+            <input type="hidden" name="housePrice">
+            <div class="input_group">
+            <label>物业类型</label>
+                <label class="radio">
+                    <input type="radio" name="estateType" value="1" <!--[if(estateType === '1'){]-->checked="checked" <!--[}]--> ><span>普通住宅</span>
+                </label>
+                <label class="radio">
+                    <input type="radio" name="estateType" value="0" <!--[if(estateType === '0'){]-->checked="checked" <!--[}]--> ><span>非普通住宅</span>
+                </label>
+            </div>
+            <div id="type" class="input_group checkbox">
+            <label>产权满两年</label>
+                <input id="propertyTwoYears" type="hidden" name="isTwoYear" value="<!--[=isTwoYear]-->">
+                <i for="propertyTwoYears" data-checked="1" data-nochecked="0" <!--[if(isTwoYear === '1'){]--> class="active" <!--[}]--> ></i>
+            </div>
+            <div id="type" class="input_group checkbox">
+            <label>业主唯一房产</label>
+                <input id="propertyUnique" type="hidden" name="isOneHous" value="<!--[=isOneHous]-->">
+                <i for="propertyUnique" data-checked="1" data-nochecked="0" <!--[if(isOneHous === '1'){]--> class="active" <!--[}]-->></i>
+            </div>
+            <div id="type" class="input_group checkbox">
+            <label>业主首次购房</label>
+                <input id="propertyFirst" type="hidden" name="isFirst" value="<!--[=isFirst]-->">
+                <i for="propertyFirst" data-checked="1" data-nochecked="0" <!--[if(isFirst === '1'){]--> class="active" <!--[}]-->></i>
+            </div>
+            <div class="input_group">
+                <label>原购买价格</label>
+                <input type="text" data-rule="number_" name="h_oldPrice" maxlength="6" value="<!--[=$formatMoney(oldPrice)]-->"/><span class="tag">W</span>
+            </div>
+            <div class="sub_btn">
+                <input type="submit" value="提交">
+            </div>
+

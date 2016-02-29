@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+    head
+        include ../com/meta
+        title 所属城市
+        link(rel="stylesheet" ,href="/assets/styles/personal/personalInfoCity.min.css")
+    body
+        #personalInfoCity_page.page.app.out(data-onpagefirstinto="getCityList")
+            header
+                a.icon.icon_back(href="personalInfo.html")
+                h1.title.current_city 所属城市
+            .mr
+                p 当前定位城市&nbsp;-&nbsp;
+                    span.current_city --
+                    a#loacation_btn &nbsp;GPS定位
+
+            section.container
+                ul.city_list.clearfix#city-list
+
+        include ../com/footer
+        script(type="text/javascript",src="http://api.map.baidu.com/api?v=2.0&ak=pBYPU9rfQCTflKcU2jSF9iuy")
+        script(type="text/javascript",src="/assets/scripts/personal/personalInfoCity.js")
+        script(type="text/html",id="city-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li><a data-id="<!--[=list[i].id]-->"><!--[=list[i].cityName]--></a></li>
+            | <!--[}]-->
